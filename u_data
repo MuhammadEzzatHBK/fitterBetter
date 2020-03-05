@@ -62,5 +62,31 @@ public class u_data {
         }
         return goal;
     }
-            
+                public String getName() {
+        return name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public int getGoal() {
+        return goal;
+    }
+
+    public int getBmi() {
+        return bmi;
+    }
 }
