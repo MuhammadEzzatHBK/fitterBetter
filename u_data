@@ -26,6 +26,7 @@ public class u_data {
         return bmi;
      }
     public int bmi_range(){
+    bmi_calc();
         if(bmi<20)
             return 1;
          if(bmi<=25)
