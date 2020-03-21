@@ -120,7 +120,11 @@ public class admin extends person {
           }
        }
        phys.elementAt(minindex).getPatients().addElement(phys.elementAt(removal).getPatients().elementAt(i));
+       int x = phys.elementAt(minindex).getPatients().size();
+       user added = (user)phys.elementAt(minindex).getPatients().elementAt(x-1);
+       added.setPid(phys.elementAt(minindex).getId());
     }
     phys.removeElementAt(removal);
+    
     }
 }
