@@ -2,8 +2,9 @@ package gui;
 
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
-
+ 
 public class general_login extends javax.swing.JFrame {
+
     public general_login() {
         initComponents();
     }
@@ -181,7 +182,7 @@ public class general_login extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         jPanel1.setVisible(false);
-        Login_Admin login_admin = new Login_Admin();
+        Login_Admin login_admin = new Login_Admin(this);
         this.add(login_admin);
         // open new JFrame
         /*login_Admin login_admin = new login_Admin();
@@ -194,14 +195,14 @@ public class general_login extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         jPanel1.setVisible(false);
-        Login_Member login_member = new Login_Member();
+        Login_Member login_member = new Login_Member(this);
         this.add(login_member);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         jPanel1.setVisible(false);
-        Login_Physician login_physician = new Login_Physician();
+        Login_Physician login_physician = new Login_Physician(this);
         this.add(login_physician);
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -235,7 +236,7 @@ public class general_login extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new general_login().setVisible(true);
+               new general_login().setVisible(true);
             }
         });
     }
