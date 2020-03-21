@@ -210,14 +210,14 @@ public class Login_Admin extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        general_login_1 d = new general_login_1();
-        f.add(d);
+        general_login_1 login = new general_login_1(f);
+        f.add(login);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        Dashboard_Admin d = new Dashboard_Admin();
+        Dashboard_Admin d = new Dashboard_Admin(f);
         f.add(d);
 
     }//GEN-LAST:event_jButton1ActionPerformed
