@@ -1,10 +1,16 @@
 package gui;
 
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
+
 public class general_login extends javax.swing.JFrame {
     public general_login() {
         initComponents();
     }
-
+    public void close(){
+        WindowEvent winColsingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winColsingEvent);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,7 +32,7 @@ public class general_login extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new java.awt.FlowLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -48,6 +54,11 @@ public class general_login extends javax.swing.JFrame {
         jButton5.setMaximumSize(new java.awt.Dimension(110, 40));
         jButton5.setMinimumSize(new java.awt.Dimension(110, 40));
         jButton5.setPreferredSize(new java.awt.Dimension(110, 40));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -86,7 +97,6 @@ public class general_login extends javax.swing.JFrame {
         jButton4.setMaximumSize(new java.awt.Dimension(110, 40));
         jButton4.setMinimumSize(new java.awt.Dimension(110, 40));
         jButton4.setPreferredSize(new java.awt.Dimension(110, 40));
-        jButton4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/photos/xx_hover.png"))); // NOI18N
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -129,6 +139,11 @@ public class general_login extends javax.swing.JFrame {
         jButton2.setMaximumSize(new java.awt.Dimension(130, 40));
         jButton2.setMinimumSize(new java.awt.Dimension(130, 40));
         jButton2.setPreferredSize(new java.awt.Dimension(130, 40));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/photos/member_icon.png"))); // NOI18N
 
@@ -165,7 +180,30 @@ public class general_login extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        jPanel1.setVisible(false);
+        Login_Admin login_admin = new Login_Admin();
+        this.add(login_admin);
+        // open new JFrame
+        /*login_Admin login_admin = new login_Admin();
+        login_admin.setVisible(true);
+        close();*/
+        
+
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        jPanel1.setVisible(false);
+        Login_Member login_member = new Login_Member();
+        this.add(login_member);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        jPanel1.setVisible(false);
+        Login_Physician login_physician = new Login_Physician();
+        this.add(login_physician);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
