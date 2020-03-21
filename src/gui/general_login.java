@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
+import javax.swing.JPanel;
  
 public class general_login extends javax.swing.JFrame {
 
@@ -184,12 +185,6 @@ public class general_login extends javax.swing.JFrame {
         jPanel1.setVisible(false);
         Login_Admin login_admin = new Login_Admin(this);
         this.add(login_admin);
-        // open new JFrame
-        /*login_Admin login_admin = new login_Admin();
-        login_admin.setVisible(true);
-        close();*/
-        
-
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -240,7 +235,6 @@ public class general_login extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
