@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui;
 
 /**
@@ -14,10 +9,14 @@ public class Login_Physician extends javax.swing.JPanel {
     /**
      * Creates new form Login_Admin
      */
+    general_login f;
     public Login_Physician() {
         initComponents();
     }
-
+    public Login_Physician(general_login f) {
+        initComponents();
+        this.f = f;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
