@@ -238,8 +238,8 @@ public class Dashboard_Admin extends javax.swing.JPanel {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        Login_Physician login_physician = new Login_Physician(f);
-        f.add(login_physician);
+        admin_allMembers a = new admin_allMembers(f);
+        f.add(a);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
