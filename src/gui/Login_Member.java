@@ -14,8 +14,13 @@ public class Login_Member extends javax.swing.JPanel {
     /**
      * Creates new form Login_Admin
      */
+    general_login f;
     public Login_Member() {
         initComponents();
+    }
+    public Login_Member(general_login f) {
+        initComponents();
+        this.f = f;
     }
 
     /**
