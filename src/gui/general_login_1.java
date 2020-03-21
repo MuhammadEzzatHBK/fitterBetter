@@ -206,21 +206,21 @@ public class general_login_1 extends javax.swing.JPanel {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        jPanel1.setVisible(false);
+        this.setVisible(false);
         Login_Physician login_physician = new Login_Physician(f);
         f.add(login_physician);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        jPanel1.setVisible(false);
+        this.setVisible(false);
         Login_Admin a = new Login_Admin(f);
         f.add(a);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        jPanel1.setVisible(false);
+        this.setVisible(false);
         Login_Member login_member = new Login_Member(f);
         f.add(login_member);
     }//GEN-LAST:event_jButton2ActionPerformed
