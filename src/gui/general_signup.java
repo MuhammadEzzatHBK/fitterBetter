@@ -81,9 +81,9 @@ public class general_signup extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(227, Short.MAX_VALUE)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79))
+                .addGap(68, 68, 68))
         );
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 0, 680, 670));
@@ -137,12 +137,16 @@ public class general_signup extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        Login_Member login_member = new Login_Member(f);
-        f.add(login_member);
+        Sigup_Physician s = new Sigup_Physician(f);
+        f.add(s);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        
+        this.setVisible(false);
+        Signup_Member s = new Signup_Member(f);
+        f.add(s);
     }//GEN-LAST:event_jButton3ActionPerformed
 
 
