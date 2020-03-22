@@ -19,7 +19,7 @@ public class user extends person {
     private int xp ;
     private ArrayList<String> track=new ArrayList<String>();
     private boolean active = false;
-    
+    private chat currentchat;
      user(String firstN, String lastN, String userpass, String mail, int age , double weight , double height ){
       super(firstN, lastN,userpass, mail );
       this.age = age;
@@ -30,7 +30,14 @@ public class user extends person {
       id = "U"+userno;
      track.add(String.valueOf(weight));
      }
-
+     public void getchat(ArrayList<chat> Allchats)
+     {
+         for(int i=0;i<Allchats.size();i++)
+         {
+            if(Allchats.get(i).id.equals(id))
+                currentchat=Allchats.get(i);
+         }
+     }
     public String getId() {
         return id;
     }
