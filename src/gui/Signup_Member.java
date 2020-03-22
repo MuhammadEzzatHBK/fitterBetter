@@ -227,6 +227,11 @@ public class Signup_Member extends javax.swing.JPanel {
         jTextField8.setForeground(new java.awt.Color(153, 153, 153));
         jTextField8.setText("Enter Email");
         jTextField8.setBorder(null);
+        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField8ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -503,6 +508,10 @@ public class Signup_Member extends javax.swing.JPanel {
     private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField13ActionPerformed
+
+    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField8ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
