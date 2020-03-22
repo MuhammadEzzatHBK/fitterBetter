@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 package clients;
-import java.lang.Math;
 import java.util.*;
+
 /**
  *
  * @author lenovo
@@ -17,7 +17,7 @@ public class user extends person {
     private double weight, height, bmi,goalM;
     private boolean goalT;
     private int xp ;
-    private Vector track;
+    private ArrayList<String> track=new ArrayList<String>();
     private boolean active = false;
     
      user(String firstN, String lastN, String userpass, String mail, int age , double weight , double height ){
@@ -27,8 +27,8 @@ public class user extends person {
       this.height = height;
       bmi = weight/(height*height);
       userno++;
-      id = new String("U"+userno);
-      track.add(weight);
+      id = "U"+userno;
+     track.add(String.valueOf(weight));
      }
 
     public String getId() {
@@ -63,13 +63,11 @@ public class user extends person {
         this.age = age;
     }
 
-    public double getWeight() {
-        return weight;
-    }
+     
 
     public void setWeight(double weight) {
         this.weight = weight;
-        track.add(weight);
+       track.add(String.valueOf(weight));
     }
 
     public double getHeight() {
@@ -84,8 +82,10 @@ public class user extends person {
         return bmi;
     }
 
-    public void setBmi(double bmi) {
-        this.bmi = bmi;
+    public void setBmi() {
+       double h=(height*height);
+      bmi=(weight/h)*10000;
+        
     }
 
     public double getGoalM() {
@@ -93,7 +93,13 @@ public class user extends person {
     }
 
     public void setGoalM() {
-        goalM = Math.abs((25*(height*height))-weight);
+      double temp;
+      double h=(height*height);
+        setGoalT();
+       if(goalT)
+          temp=bmi-25;
+       else temp=25-bmi;
+       goalM=(temp/10000)*h;
     }
 
     public boolean isGoalT() {
@@ -134,8 +140,11 @@ public class user extends person {
             state = "Severely obese";
     }
     
-    public Vector getTrack(){
+    public ArrayList<String> getTrack(){
         return track;
     }
     public void activate(){active = true;}
+    
+    
 }
+
