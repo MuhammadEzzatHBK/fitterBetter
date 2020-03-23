@@ -9,19 +9,20 @@ package gui;
  *
  * @author user
  */
-public class admin_allMembers extends javax.swing.JPanel {
+public class Dashboard_Physician extends javax.swing.JPanel {
 
     /**
-     * Creates new form admin_allMembers
+     * Creates new form Dashboard_Physician
      */
     general_login f;
-    public admin_allMembers() {
+    public Dashboard_Physician() {
         initComponents();
-    }
-    public admin_allMembers(general_login f) {
+    }   
+    public Dashboard_Physician(general_login f) {
         initComponents();
         this.f = f;
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,7 +48,6 @@ public class admin_allMembers extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(247, 241, 227));
         jPanel1.setMinimumSize(new java.awt.Dimension(1365, 670));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1365, 670));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/photos/horizontal_18.png"))); // NOI18N
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -56,8 +56,8 @@ public class admin_allMembers extends javax.swing.JPanel {
         jLabel3.setText("Welcome");
 
         jLabel2.setFont(new java.awt.Font("Candara", 1, 60)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(253, 150, 68));
-        jLabel2.setText("Ezzat");
+        jLabel2.setForeground(new java.awt.Color(43, 203, 186));
+        jLabel2.setText("Sara");
 
         jTable2.setBackground(new java.awt.Color(247, 241, 227));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -135,7 +135,7 @@ public class admin_allMembers extends javax.swing.JPanel {
 
         jButton9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/photos/in-between.png"))); // NOI18N
-        jButton9.setText("Home");
+        jButton9.setText("Report");
         jButton9.setActionCommand("physician");
         jButton9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton9.setMaximumSize(new java.awt.Dimension(110, 40));
@@ -171,7 +171,7 @@ public class admin_allMembers extends javax.swing.JPanel {
                 .addGap(53, 53, 53)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2)
                         .addGap(17, 17, 17))
@@ -183,7 +183,6 @@ public class admin_allMembers extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -243,7 +242,7 @@ public class admin_allMembers extends javax.swing.JPanel {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-                        this.setVisible(false);
+        this.setVisible(false);
         edit_Member a = new edit_Member(f);
         f.add(a);
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -255,16 +254,14 @@ public class admin_allMembers extends javax.swing.JPanel {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-                        this.setVisible(false);
+        this.setVisible(false);
         add_Member a = new add_Member(f);
         f.add(a);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
-                        this.setVisible(false);
-        Dashboard_Admin a = new Dashboard_Admin(f);
-        f.add(a);
+
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
