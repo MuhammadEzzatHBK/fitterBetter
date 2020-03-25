@@ -1,5 +1,8 @@
 package dataBase;
-
+/** Class Meal: represent an Observation from dataset 
+ * @since 25/3/2020
+ * @author Sahar
+ */
 public class meal {
     private String name;
     private double portion_amount;
