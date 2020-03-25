@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 package clients;
+import java.lang.Math;
 import java.util.*;
-
 /**
  *
  * @author lenovo
@@ -17,9 +17,11 @@ public class user extends person {
     private double weight, height, bmi,goalM;
     private boolean goalT;
     private int xp ;
-    private ArrayList<String> track=new ArrayList<String>();
+    private Vector track;
     private boolean active = false;
-    private chat currentchat;
+    private double requiredWater;
+    private double actualWater;
+    
      user(String firstN, String lastN, String userpass, String mail, int age , double weight , double height ){
       super(firstN, lastN,userpass, mail );
       this.age = age;
@@ -27,17 +29,25 @@ public class user extends person {
       this.height = height;
       bmi = weight/(height*height);
       userno++;
-      id = "U"+userno;
-     track.add(String.valueOf(weight));
+      id = new String("U"+userno);
+      track.add(weight);
+      requiredWater = weight/30;
      }
-     public void getchat(ArrayList<chat> Allchats)
-     {
-         for(int i=0;i<Allchats.size();i++)
-         {
-            if(Allchats.get(i).id.equals(id))
-                currentchat=Allchats.get(i);
-         }
-     }
+
+    public void water_Ex(int ex)
+    {
+        requiredWater = weight/30;
+        requiredWater += 0.35*ex;
+    }
+    public void water_Drink(double amount)
+    {
+        actualWater += amount;
+        water_Compare();
+    }
+    public double water_Compare()
+    {
+        return (actualWater/requiredWater)*100;
+    }
     public String getId() {
         return id;
     }
@@ -70,11 +80,13 @@ public class user extends person {
         this.age = age;
     }
 
-     
+    public double getWeight() {
+        return weight;
+    }
 
     public void setWeight(double weight) {
         this.weight = weight;
-       track.add(String.valueOf(weight));
+        track.add(weight);
     }
 
     public double getHeight() {
@@ -89,10 +101,8 @@ public class user extends person {
         return bmi;
     }
 
-    public void setBmi() {
-       double h=(height*height);
-      bmi=(weight/h)*10000;
-        
+    public void setBmi(double bmi) {
+        this.bmi = bmi;
     }
 
     public double getGoalM() {
@@ -100,13 +110,7 @@ public class user extends person {
     }
 
     public void setGoalM() {
-      double temp;
-      double h=(height*height);
-        setGoalT();
-       if(goalT)
-          temp=bmi-25;
-       else temp=25-bmi;
-       goalM=(temp/10000)*h;
+        goalM = Math.abs((25*(height*height))-weight);
     }
 
     public boolean isGoalT() {
@@ -147,11 +151,8 @@ public class user extends person {
             state = "Severely obese";
     }
     
-    public ArrayList<String> getTrack(){
+    public Vector getTrack(){
         return track;
     }
     public void activate(){active = true;}
-    
-    
 }
-
