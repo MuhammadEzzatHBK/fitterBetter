@@ -48,6 +48,13 @@ public class user extends person {
     {
         return (actualWater/requiredWater)*100;
     }
+    public double getRequiredWater() {
+        return requiredWater;
+    }
+
+    public double getActualWater() {
+        return actualWater;
+    }
     public String getId() {
         return id;
     }
