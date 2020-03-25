@@ -9,19 +9,20 @@ package gui;
  *
  * @author user
  */
-public class water extends javax.swing.JPanel {
+public class Analysis extends javax.swing.JPanel {
 
     /**
-     * Creates new form water
+     * Creates new form Analysis
      */
     general_login f;
-    public water() {
+    public Analysis() {
         initComponents();
     }
-        public water(general_login f) {
+        public Analysis(general_login f) {
         initComponents();
-        this.f = f;
+        this.f =f;
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -46,7 +47,7 @@ public class water extends javax.swing.JPanel {
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Candara", 0, 24)); // NOI18N
-        jLabel4.setText("Water plan");
+        jLabel4.setText("Analysis Plan");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 340, -1, -1));
 
         jButton7.setBackground(new java.awt.Color(247, 241, 227));
@@ -66,7 +67,7 @@ public class water extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1372, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 24, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

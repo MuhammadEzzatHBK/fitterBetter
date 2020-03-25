@@ -243,7 +243,7 @@ public class Dashboard_Physician extends javax.swing.JPanel {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        edit_Member a = new edit_Member(f);
+        p_edit_Member a = new p_edit_Member(f);
         f.add(a);
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -255,7 +255,7 @@ public class Dashboard_Physician extends javax.swing.JPanel {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        add_Member a = new add_Member(f);
+        p_add_Member a = new p_add_Member(f);
         f.add(a);
     }//GEN-LAST:event_jButton7ActionPerformed
 
