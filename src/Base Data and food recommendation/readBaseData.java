@@ -10,7 +10,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class readBaseData {
-    
+ /**
+ * Read the dataset
+ * read from .txt file contains the whole dataset, into the program.
+ *
+ * @return Array List of object meal contain the whole data
+ * @param fileName fileName that contains the data
+ * @return 
+ */   
 public static ArrayList<meal> read_csv(String fileName) {
         ArrayList<meal> baseData = new ArrayList<>();
         Path pathToFile = Paths.get(fileName);
