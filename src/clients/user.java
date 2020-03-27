@@ -23,6 +23,8 @@ public class user extends person {
     private ArrayList<String> breakfast;
     private ArrayList<String> lunch;
     private ArrayList<String> dinner;
+    private double requiredWater;
+    private double actualWater;
      user(String firstN, String lastN, String userpass, String mail, int age , double weight , double height ){
       super(firstN, lastN,userpass, mail );
       this.age = age;
@@ -32,7 +34,30 @@ public class user extends person {
       userno++;
       id = "U"+userno;
      track.add(String.valueOf(weight));
+       requiredWater = weight/30;
      }
+      public void water_Ex(int ex)
+    {
+        requiredWater = weight/30;
+        requiredWater += 0.35*ex;
+    }
+    public void water_Drink(double amount)
+    {
+        actualWater += amount;
+        water_Compare();
+    }
+    public double water_Compare()
+    {
+        return (actualWater/requiredWater)*100;
+    }
+    public double getRequiredWater() {
+        return requiredWater;
+    }
+
+    public double getActualWater() {
+        return actualWater;
+    }
+    
      public void getchat(ArrayList<chat> Allchats)
      {
          for(int i=0;i<Allchats.size();i++)
@@ -157,4 +182,6 @@ public class user extends person {
     
     
 }
+
+
 
