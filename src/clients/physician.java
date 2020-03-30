@@ -66,4 +66,12 @@ public class physician extends person {
     public Object getUser(int index){
         return patients.elementAt(index);
     }
+    public Vector<user> search(String n){
+    Vector<user>target = new Vector();
+    for(int i=0;i<patients.size();i++){
+        if(patients.elementAt(i).getFirstN().contains(n)||patients.elementAt(i).getLastN().contains(n))
+            target.add(patients.elementAt(i));
+    }
+    return(target);
+    }
 }
