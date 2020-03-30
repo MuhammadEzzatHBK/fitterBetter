@@ -133,4 +133,21 @@ public class admin extends person {
             users.elementAt(i).activate();
         }
     }
+    public Vector<user> searchUsers(String n){
+    Vector<user>target = new Vector();
+    for(int i=0;i<users.size();i++){
+        if(users.elementAt(i).getFirstN().contains(n)||users.elementAt(i).getLastN().contains(n))
+            target.add(users.elementAt(i));
+    }
+    return(target);
+    }
+    public Vector<physician> searchPhys(String n){
+     Vector<physician>target = new Vector();
+    for(int i=0;i<phys.size();i++){
+        if(phys.elementAt(i).getFirstN().contains(n)||phys.elementAt(i).getLastN().contains(n))
+            target.add(phys.elementAt(i));
+    }
+    return(target);
+    
+    }
 }
