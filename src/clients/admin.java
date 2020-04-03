@@ -14,7 +14,11 @@ public class admin extends person {
     private static Vector<user> users;
     private static Vector<physician> phys;
     private static int adminno = 0;
-    
+
+    public Vector<chat> getU_phchats() {
+        return u_phchats;
+    }
+    private  Vector<chat> u_phchats;
             
     admin(String firstN, String lastN, String userpass, String mail){
       super(firstN, lastN,userpass, mail );
