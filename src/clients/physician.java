@@ -17,6 +17,7 @@ public class physician extends person {
     private Vector<user> patients;
     static int physno = 0;
     private String id;
+    chat currentchat;
     physician(String firstN, String lastN, String userpass, String mail,int age){
       super(firstN, lastN,userpass, mail );
       physno ++;
@@ -74,4 +75,12 @@ public class physician extends person {
     }
     return(target);
     }
+    public void getchat(Vector<chat> Allchats,String userid)
+     {
+         for(int i=0;i<Allchats.size();i++)
+         {
+            if(Allchats.get(i).pid.equals(id)&&Allchats.get(i).id.equals(userid))
+                currentchat=Allchats.get(i);
+         }
+     }
 }
