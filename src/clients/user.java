@@ -5,13 +5,13 @@
  */
 package clients;
 import java.util.*;
-
+import java.io.Serializable;
 /**
  *
  * @author lenovo
  */
-public class user extends person {
-    private String id, pid, state;
+public class user extends person implements Serializable {
+    private String id, pid, state,username;
     static int userno = 0;
     private int age;
     private double weight, height, bmi,goalM;
@@ -25,7 +25,8 @@ public class user extends person {
     private ArrayList<String> dinner;
     private double requiredWater;
     private double actualWater;
-     user(String firstN, String lastN, String userpass, String mail, int age , double weight , double height ){
+    private static final long serialVersionUID = 1L;
+    public user(String firstN, String lastN,String username, String userpass, String mail, int age , double weight , double height ){
       super(firstN, lastN,userpass, mail );
       this.age = age;
       this.weight = weight;
@@ -58,7 +59,7 @@ public class user extends person {
         return actualWater;
     }
     
-     public void getchat(ArrayList<chat> Allchats)
+     public void getchat(Vector<chat> Allchats)
      {
          for(int i=0;i<Allchats.size();i++)
          {
