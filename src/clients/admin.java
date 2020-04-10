@@ -64,7 +64,7 @@ public class admin extends person {
     public Object getPhysician(int index){
         return (phys.elementAt(index));
     }
-    public void addUser(user X){
+    public boolean addUser(user X){
        users.add(X);
        int min = phys.elementAt(0).getPatients().size();
        int minindex = 0;
@@ -76,9 +76,14 @@ public class admin extends person {
        }
        phys.elementAt(minindex).getPatients().add(X);
        X.setPid(phys.elementAt(minindex).getId());
+       String ID = X.getId();
+       return(isfound(ID,"user"));
     }
-    public void addPhysician(physician X){
+    public boolean addPhysician(physician X){
         phys.add(X);
+        String ID = X.getId();
+        return(isfound(ID,"physician"));
+        
     }
     public void removeUser(String id){
         int uremoval = -1;
@@ -153,5 +158,27 @@ public class admin extends person {
     }
     return(target);
     
+    }
+     public static boolean isfound(String id,String orin){
+        if(orin.equals("user"))
+            for(int i=0;i<users.size();i++)
+                if(users.elementAt(i).getId().equals(id))
+                    return(true);
+            
+        else
+            for(int j=0;j<phys.size();j++)
+                if(phys.elementAt(j).getId().equals(id))
+                    return(true);
+               
+        return(false);
+    }
+    public static boolean isreserved(String Case){
+        for(int i =0;i<users.size();i++)
+            if(users.elementAt(i).getUserpass().contains(Case))
+                return(true);
+        for(int i=0;i<phys.size();i++)
+            if(phys.elementAt(i).getUserpass().contains(Case))
+                return(true);
+        return(false);
     }
 }
