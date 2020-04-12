@@ -5,13 +5,14 @@
  */
 package clients;
 import java.util.*;
-
+import java.io.Serializable;
 /**
  *
  * @author lenovo
  */
-public class user extends person {
-    private String id, pid, state;
+public class user extends person implements Serializable {
+    private String id, pid, state,username,gender;
+
     static int userno = 0;
     private int age;
     private double weight, height, bmi,goalM;
@@ -25,7 +26,13 @@ public class user extends person {
     private ArrayList<String> dinner;
     private double requiredWater;
     private double actualWater;
-     user(String firstN, String lastN, String userpass, String mail, int age , double weight , double height ){
+    private static final long serialVersionUID = 1L;
+   
+    
+    public user(){
+     
+    }
+    public user(String firstN, String lastN,String username, String userpass, String mail, int age , double weight , double height ){
       super(firstN, lastN,userpass, mail );
       this.age = age;
       this.weight = weight;
@@ -36,6 +43,7 @@ public class user extends person {
      track.add(String.valueOf(weight));
        requiredWater = weight/30;
      }
+     
       public void water_Ex(int ex)
     {
         requiredWater = weight/30;
@@ -97,14 +105,14 @@ public class user extends person {
     public void setAge(int age) {
         this.age = age;
     }
-
-     
-
+    
     public void setWeight(double weight) {
         this.weight = weight;
        track.add(String.valueOf(weight));
     }
-
+    public String getGender() {
+        return gender;
+    }
     public double getHeight() {
         return height;
     }
@@ -121,6 +129,14 @@ public class user extends person {
        double h=(height*height);
       bmi=(weight/h)*10000;
         
+    }
+    
+    public String getUsername() {
+        return username;
+    }
+
+    public double getWeight() {
+        return weight;
     }
 
     public double getGoalM() {
