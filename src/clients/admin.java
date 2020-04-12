@@ -11,13 +11,9 @@ import java.util.*;
  */
 public class admin extends person {
     private String id;
-    private static Vector<user> users;
-    private static Vector<physician> phys;
+    public static Vector<user> users;
+    public static Vector<physician> phys;
     private static int adminno = 0;
-
-    public Vector<chat> getU_phchats() {
-        return u_phchats;
-    }
     private  Vector<chat> u_phchats;
             
     admin(String firstN, String lastN, String userpass, String mail){
@@ -25,31 +21,27 @@ public class admin extends person {
       adminno++;
       id = new String("A"+adminno);
     }
-
+    public Vector<chat> getU_phchats() {
+        return u_phchats;
+    }
     public String getId() {
         return id;
     }
-
     public void setId(String id) {
         this.id = id;
     }
-
     public static Vector getUsers() {
         return users;
     }
-
     public static void setUsers(Vector users) {
         admin.users = users;
     }
-
     public static Vector getPhys() {
         return phys;
     }
-
     public static void setPhys(Vector phys) {
         admin.phys = phys;
     }
-
     public static int getAdminno() {
         return adminno;
     }

@@ -15,17 +15,22 @@ public class physician extends person {
     private double salary;
     final static double baseSalary = 3000;
     private Vector<user> patients;
+    private int numpatients;
     static int physno = 0;
     private String id;
     chat currentchat;
-    physician(String firstN, String lastN, String userpass, String mail,int age){
+    
+    
+    public physician(String firstN, String lastN, String userpass, String mail,int age){
       super(firstN, lastN,userpass, mail );
       physno ++;
       id = new String("P"+physno);
       salary = baseSalary;
       this.age = age;
     } 
-
+    public int getNumpatients() {
+        return numpatients;
+    }
     public int getAge() {
         return age;
     }
