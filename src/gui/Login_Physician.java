@@ -1,5 +1,9 @@
 package gui;
 
+import clients.admin;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
+
 /**
  *
  * @author user
@@ -210,9 +214,17 @@ public class Login_Physician extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         // Mossadmake sure username and password are correct
-                this.setVisible(false);
-        Dashboard_Physician g =new Dashboard_Physician(f);
-        f.add(g);
+        
+        String pass=String.valueOf(jPasswordField1.getPassword());
+        if(admin.isfound(pass,"phys"))
+        {
+            this.setVisible(false);
+            Dashboard_Physician g =new Dashboard_Physician(f);
+            f.add(g);
+        }
+        else 
+        JOptionPane.showMessageDialog(this,"Wrong password", "Error", ERROR_MESSAGE);
+            
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
