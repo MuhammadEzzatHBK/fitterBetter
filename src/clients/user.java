@@ -11,7 +11,8 @@ import java.io.Serializable;
  * @author lenovo
  */
 public class user extends person implements Serializable {
-    private String id, pid, state,username;
+    private String id, pid, state,username,gender;
+
     static int userno = 0;
     private int age;
     private double weight, height, bmi,goalM;
@@ -26,6 +27,11 @@ public class user extends person implements Serializable {
     private double requiredWater;
     private double actualWater;
     private static final long serialVersionUID = 1L;
+   
+    
+    public user(){
+     
+    }
     public user(String firstN, String lastN,String username, String userpass, String mail, int age , double weight , double height ){
       super(firstN, lastN,userpass, mail );
       this.age = age;
@@ -37,6 +43,7 @@ public class user extends person implements Serializable {
      track.add(String.valueOf(weight));
        requiredWater = weight/30;
      }
+     
       public void water_Ex(int ex)
     {
         requiredWater = weight/30;
@@ -98,14 +105,14 @@ public class user extends person implements Serializable {
     public void setAge(int age) {
         this.age = age;
     }
-
-     
-
+    
     public void setWeight(double weight) {
         this.weight = weight;
        track.add(String.valueOf(weight));
     }
-
+    public String getGender() {
+        return gender;
+    }
     public double getHeight() {
         return height;
     }
@@ -122,6 +129,14 @@ public class user extends person implements Serializable {
        double h=(height*height);
       bmi=(weight/h)*10000;
         
+    }
+    
+    public String getUsername() {
+        return username;
+    }
+
+    public double getWeight() {
+        return weight;
     }
 
     public double getGoalM() {

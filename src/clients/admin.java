@@ -11,13 +11,15 @@ import java.util.*;
  */
 public class admin extends person {
     private String id;
-    public static Vector<user> users;
-    public static Vector<physician> phys;
+    private static Vector<user> users=new Vector<user>();
+    private static Vector<physician> phys= new Vector<physician>();
     private static int adminno = 0;
     private  Vector<chat> u_phchats;
             
     admin(String firstN, String lastN, String userpass, String mail){
       super(firstN, lastN,userpass, mail );
+       
+ 
       adminno++;
       id = new String("A"+adminno);
     }
