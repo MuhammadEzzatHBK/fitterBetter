@@ -6,6 +6,8 @@
 package gui;
 
 import clients.admin;
+import clients.physician;
+import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -29,14 +31,16 @@ public class admin_allPhysicians extends javax.swing.JPanel {
       public void addrow(){
         DefaultTableModel m= (DefaultTableModel)jTable2.getModel();
         Object rowdata[] =new Object[6];
-        for(int i=0;i<admin.phys.size();i++)
+        Vector<physician> temp;
+        temp= admin.getPhys();
+        for(int i=0;i<temp.size();i++)
         {
-            rowdata[0]=admin.phys.elementAt(i).getId();
-            rowdata[1]=admin.phys.elementAt(i).getFirstN();
-            rowdata[2]=admin.phys.elementAt(i).getMail();
-            rowdata[3]=admin.phys.elementAt(i).getAge();
-            rowdata[4]=admin.phys.elementAt(i).getNumpatients();
-            rowdata[5]=admin.phys.elementAt(i).getSalary();
+            rowdata[0]=temp.elementAt(i).getId();
+            rowdata[1]=temp.elementAt(i).getFirstN();
+            rowdata[2]=temp.elementAt(i).getMail();
+            rowdata[3]=temp.elementAt(i).getAge();
+            rowdata[4]=temp.elementAt(i).getNumpatients();
+            rowdata[5]=temp.elementAt(i).getSalary();
             m.addRow(rowdata);
         }
     }

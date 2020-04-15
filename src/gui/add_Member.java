@@ -267,6 +267,7 @@ public class add_Member extends javax.swing.JPanel {
         jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, -1, -1));
 
         jPanel9.setBackground(new java.awt.Color(247, 241, 227));
+        jPanel9.setName(""); // NOI18N
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel13.setText("Username");

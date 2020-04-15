@@ -9,15 +9,23 @@ package gui;
  *
  * @author user
  */
+
 public class log_out extends javax.swing.JPanel {
 
     /**
      * Creates new form log_out
      */
+    general_login f;
     public log_out() {
         initComponents();
     }
 
+    log_out(general_login f) {
+         initComponents();
+          this.f =f;   
+    }
+
+     
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,6 +38,7 @@ public class log_out extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         jPanel2.setBackground(new java.awt.Color(247, 241, 227));
         jPanel2.setForeground(new java.awt.Color(247, 241, 227));
@@ -42,6 +51,14 @@ public class log_out extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Candara", 0, 24)); // NOI18N
         jLabel4.setText("Goodbye, Please Be Back Soon ;)");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 340, -1, -1));
+
+        jButton1.setText("continue");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 400, 190, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -57,8 +74,15 @@ public class log_out extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+      this.setVisible(false);
+      new general_login(f).setVisible(true);
+     
+    }//GEN-LAST:event_jButton1ActionPerformed
+  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;

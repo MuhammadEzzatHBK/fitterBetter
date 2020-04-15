@@ -6,8 +6,14 @@ import javax.swing.JPanel;
  
 public class general_login extends javax.swing.JFrame {
 
+    general_login f;
     public general_login() {
         initComponents();
+    }
+   
+    general_login(general_login f) {
+        initComponents();
+        this.f =f;
     }
     public void close(){
         WindowEvent winColsingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
@@ -152,6 +158,7 @@ public class general_login extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                new general_login().setVisible(true);
+               
             }
         });
     }

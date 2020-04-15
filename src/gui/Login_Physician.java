@@ -216,7 +216,7 @@ public class Login_Physician extends javax.swing.JPanel {
         // Mossadmake sure username and password are correct
         
         String pass=String.valueOf(jPasswordField1.getPassword());
-        if(admin.isfound(pass,"phys"))
+        if(admin.isreserved(pass))
         {
             this.setVisible(false);
             Dashboard_Physician g =new Dashboard_Physician(f);

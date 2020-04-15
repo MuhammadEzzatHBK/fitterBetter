@@ -5,6 +5,8 @@
  */
 package gui;
 import clients.admin;
+import clients.user;
+import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -28,17 +30,19 @@ public class admin_allMembers extends javax.swing.JPanel {
     public void addrow(){
         DefaultTableModel m= (DefaultTableModel)jTable2.getModel();
         Object rowdata[] =new Object[9];
-        for(int i=0;i<admin.users.size();i++)
+        Vector<user> temp;
+        temp= admin.getUsers();
+        for(int i=0;i<temp.size();i++)
         {
-            rowdata[0]=admin.users.elementAt(i).getId();
-            rowdata[1]=admin.users.elementAt(i).getUsername();
-            rowdata[2]=admin.users.elementAt(i).getFirstN();
-            rowdata[3]=admin.users.elementAt(i).getMail();
-            rowdata[4]=admin.users.elementAt(i).getAge();
-            rowdata[5]=admin.users.elementAt(i).getHeight();
-            rowdata[6]=admin.users.elementAt(i).getWeight();
-            rowdata[7]=admin.users.elementAt(i).getGender();
-            rowdata[8]=admin.users.elementAt(i).getPid();
+            rowdata[0]=temp.elementAt(i).getId();
+            rowdata[1]=temp.elementAt(i).getUsername();
+            rowdata[2]=temp.elementAt(i).getFirstN();
+            rowdata[3]=temp.elementAt(i).getMail();
+            rowdata[4]=temp.elementAt(i).getAge();
+            rowdata[5]=temp.elementAt(i).getHeight();
+            rowdata[6]=temp.elementAt(i).getWeight();
+            rowdata[7]=temp.elementAt(i).getGender();
+            rowdata[8]=temp.elementAt(i).getPid();
             m.addRow(rowdata);
         }
     }

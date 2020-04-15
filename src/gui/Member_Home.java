@@ -5,6 +5,8 @@
  */
 package gui;
 
+import clients.user;
+
 /**
  *
  * @author user
@@ -22,6 +24,8 @@ public class Member_Home extends javax.swing.JPanel {
     Member_Home(general_login f) {
     initComponents();
     this.f =f;    
+    //jLabel4.setText(u.getUsername());
+    jLabel4.setText("sara");
     }
 
     /**
@@ -555,7 +559,7 @@ public class Member_Home extends javax.swing.JPanel {
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        log_out e = new log_out();
+        log_out e = new log_out(f);
         f.add(e);
     }//GEN-LAST:event_jButton14ActionPerformed
 

@@ -220,8 +220,9 @@ public class Login_Member extends javax.swing.JPanel {
        
         String pass=String.valueOf(jPasswordField1.getPassword());
         String uname=jTextField1.getText();
-        if(admin.isfound(pass,"user"))
+        if(admin.isreserved(pass))
         {
+            
             this.setVisible(false);
             Member_Home d = new Member_Home(f);
             f.add(d);
