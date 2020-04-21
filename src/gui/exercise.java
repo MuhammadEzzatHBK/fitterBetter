@@ -5,6 +5,8 @@
  */
 package gui;
 
+import clients.user;
+
 /**
  *
  * @author user
@@ -15,12 +17,14 @@ public class exercise extends javax.swing.JPanel {
      * Creates new form exercise
      */
     general_login f;
+    user u1;
     public exercise() {
         initComponents();
     }
-    public exercise(general_login f) {
+    public exercise(general_login f,user u) {
         initComponents();
         this.f =f ;
+        u1=u;
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -75,9 +79,9 @@ public class exercise extends javax.swing.JPanel {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
-        Member_Home m = new Member_Home(f);
-        f.add(m);
+//        this.setVisible(false);
+//      //  Member_Home m = new Member_Home(f);
+//        f.add(m);
     }//GEN-LAST:event_jButton5ActionPerformed
 
 

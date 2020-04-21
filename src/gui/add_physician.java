@@ -5,6 +5,12 @@
  */
 package gui;
 
+import clients.admin;
+import clients.physician;
+import java.util.Vector;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
+
 /**
  *
  * @author user
@@ -15,13 +21,17 @@ public class add_physician extends javax.swing.JPanel {
      * Creates new form add_physician
      */
     general_login f;
+    admin a;
     public add_physician() {
         initComponents();
     }
-    public add_physician(general_login f) {
+    public add_physician(general_login f,admin a) {
         initComponents();
         this.f = f;
+        this.a=a;
     }
+
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -396,15 +406,31 @@ public class add_physician extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
-        admin_allPhysicians d = new admin_allPhysicians(f);
-        f.add(d);
+          String pass=String.valueOf(jTextField3.getText());
+        String name=jTextField1.getText();
+        String uname=jTextField3.getText();
+        String mail=jTextField8.getText();
+        int age=Integer.valueOf(jTextField10.getText());
+        //int age=Integer.valueOf(jTextField10.getText());
+        if(admin.name_exists(uname)){
+            JOptionPane.showMessageDialog(this,"username already exist", "Error", ERROR_MESSAGE);
+        }
+        else{
+                 Vector<physician> temp;
+                 physician p=new physician(name," ",uname,pass,mail,age);
+                 temp=admin.getPhys();
+                 temp.add(p);
+                this.setVisible(false);
+               admin_allPhysicians d = new admin_allPhysicians(f,a);
+             f.add(d);
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        admin_allPhysicians d = new admin_allPhysicians(f);
+        admin_allPhysicians d = new admin_allPhysicians(f,a);
         f.add(d);
     }//GEN-LAST:event_jButton2ActionPerformed
 

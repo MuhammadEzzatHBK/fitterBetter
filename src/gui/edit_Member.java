@@ -5,6 +5,8 @@
  */
 package gui;
 
+import clients.admin;
+
 /**
  *
  * @author user
@@ -15,11 +17,13 @@ public class edit_Member extends javax.swing.JPanel {
      * Creates new form edit_Member
      */
     general_login f;
+    admin a;
     public edit_Member() {
         initComponents();
     }
-        public edit_Member(general_login f) {
+        public edit_Member(general_login f,admin a) {
         initComponents();
+        this.a=a;
         this.f =f ;
     }
 
@@ -498,14 +502,14 @@ public class edit_Member extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        admin_allMembers d = new admin_allMembers(f);
+        admin_allMembers d = new admin_allMembers(f,a);
         f.add(d);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        admin_allMembers d = new admin_allMembers(f);
+        admin_allMembers d = new admin_allMembers(f,a);
         f.add(d);
     }//GEN-LAST:event_jButton2ActionPerformed
 

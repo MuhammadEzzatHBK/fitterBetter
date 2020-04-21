@@ -5,6 +5,8 @@
  */
 package gui;
 
+import clients.user;
+
 /**
  *
  * @author user
@@ -15,12 +17,15 @@ public class water extends javax.swing.JPanel {
      * Creates new form water
      */
     general_login f;
+    user u1;
     public water() {
         initComponents();
     }
-        public water(general_login f) {
+        public water(general_login f,user u) {
         initComponents();
         this.f = f;
+        u1=u;
+        
     }
 
     /**
@@ -483,9 +488,9 @@ public class water extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
        this.setVisible(false);
-       Member_Home m = new Member_Home(f);
+      Member_Home m = new Member_Home(f,u1);
        f.add(m);
     }//GEN-LAST:event_jButton7ActionPerformed
 

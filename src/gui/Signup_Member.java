@@ -350,8 +350,8 @@ public class Signup_Member extends javax.swing.JPanel {
         int age=Integer.parseInt(jTextField5.getText());
         double weight=Double.parseDouble(jTextField6.getText());
         double height=Double.parseDouble(jTextField4.getText());
-        if(admin.isreserved(pass)){
-            JOptionPane.showMessageDialog(this,"password and username already exist", "Error", ERROR_MESSAGE);
+        if(admin.name_exists(uname)){
+            JOptionPane.showMessageDialog(this,"username already exist", "Error", ERROR_MESSAGE);
         }
             
             
@@ -361,7 +361,7 @@ public class Signup_Member extends javax.swing.JPanel {
                   temp=admin.getUsers();
                   temp.add(u);
                   this.setVisible(false);
-                  Member_Home d = new Member_Home(f);
+                  Member_Home d = new Member_Home(f,u);
                   f.add(d);
                 }
       

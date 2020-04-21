@@ -5,6 +5,8 @@
  */
 package gui;
 
+import clients.admin;
+
 /**
  *
  * @author user
@@ -15,13 +17,18 @@ public class Dashboard_Admin extends javax.swing.JPanel {
      * Creates new form Dashboard_Admin
      */
     public general_login f;
+    admin a;
     public Dashboard_Admin() {
         initComponents();
     }
-    public Dashboard_Admin(general_login f) {
+    public Dashboard_Admin(general_login f,admin a) {
         initComponents();
         this.f = f;
+        this.a=a;
+        jLabel2.setText(a.getFirstN());
     }
+
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -261,14 +268,14 @@ public class Dashboard_Admin extends javax.swing.JPanel {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        admin_allMembers a = new admin_allMembers(f);
-        f.add(a);
+        admin_allMembers m = new admin_allMembers(f,a);
+        f.add(m);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        admin_allPhysicians g = new admin_allPhysicians(f);
+        admin_allPhysicians g = new admin_allPhysicians(f,a);
         f.add(g);
     }//GEN-LAST:event_jButton6ActionPerformed
 

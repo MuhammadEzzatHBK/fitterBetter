@@ -5,6 +5,9 @@
  */
 package gui;
 
+import clients.admin;
+import javax.swing.JFrame;
+
 /**
  *
  * @author user
@@ -14,8 +17,17 @@ public class Remove extends javax.swing.JDialog {
     /**
      * Creates new form NewJDialog
      */
-    public Remove(java.awt.Frame parent, boolean modal) {
+    admin a;
+    String id;
+    public Remove(java.awt.Frame parent, boolean modal,admin a,String id) {
         super(parent, modal);
+        initComponents();
+        this.a=a;
+        this.id=id;
+    }
+
+    private Remove(JFrame jFrame, boolean b) {
+        super(jFrame, b);
         initComponents();
     }
 
@@ -95,11 +107,13 @@ public class Remove extends javax.swing.JDialog {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        a.removeUser(id);
+        a.removePhysician(id);
         this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
-     * @param args the command line arguments
+     * @param args the command line arguments 
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

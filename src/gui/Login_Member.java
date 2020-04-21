@@ -6,6 +6,7 @@
 package gui;
 
 import clients.admin;
+import clients.user;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
  
@@ -220,11 +221,11 @@ public class Login_Member extends javax.swing.JPanel {
        
         String pass=String.valueOf(jPasswordField1.getPassword());
         String uname=jTextField1.getText();
-        if(admin.isreserved(pass))
+        if(admin.isreserved(pass,uname))
         {
-            
+             user u=(user)admin.getUser(pass);
             this.setVisible(false);
-            Member_Home d = new Member_Home(f);
+            Member_Home d = new Member_Home(f,u);
             f.add(d);
         }
         else 

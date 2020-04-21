@@ -20,12 +20,14 @@ public class admin_allPhysicians extends javax.swing.JPanel {
      * Creates new form admin_allPhysicians
      */
     general_login f;
+    admin a;
     public admin_allPhysicians() {
         initComponents();
     }
-        public admin_allPhysicians(general_login f) {
+        public admin_allPhysicians(general_login f,admin a) {
         initComponents();
         this.f = f;
+        this.a=a;
         addrow();
     }
       public void addrow(){
@@ -256,15 +258,15 @@ public class admin_allPhysicians extends javax.swing.JPanel {
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        Dashboard_Admin a = new Dashboard_Admin(f);
-        f.add(a);
+        Dashboard_Admin d = new Dashboard_Admin(f,a);
+        f.add(d);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        add_physician a = new add_physician(f);
-        f.add(a);
+        add_physician p = new add_physician(f,a);
+        f.add(p);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -274,14 +276,17 @@ public class admin_allPhysicians extends javax.swing.JPanel {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        new Remove(null, true).show();
+         DefaultTableModel model=(DefaultTableModel)jTable2.getModel();
+         int index=jTable2.getSelectedRow();
+          String id=(String) model.getValueAt(index, 0);
+        new Remove(null, true,a,id).show();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        edit_Physician a = new edit_Physician(f);
-        f.add(a);
+        edit_Physician e = new edit_Physician(f,a);
+        f.add(e);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed

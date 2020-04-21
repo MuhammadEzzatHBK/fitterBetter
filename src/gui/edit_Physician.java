@@ -5,6 +5,8 @@
  */
 package gui;
 
+import clients.admin;
+
 /**
  *
  * @author user
@@ -15,14 +17,17 @@ public class edit_Physician extends javax.swing.JPanel {
      * Creates new form edit_Physcians
      */
     general_login f;
+    admin a;
     public edit_Physician() {
         initComponents();
     }
-    public edit_Physician(general_login f) {
+    public edit_Physician(general_login f,admin a) {
         initComponents();
         this.f = f;
+        this.a=a;
     }
 
+ 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -375,14 +380,14 @@ public class edit_Physician extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        admin_allPhysicians d = new admin_allPhysicians(f);
+        admin_allPhysicians d = new admin_allPhysicians(f,a);
         f.add(d);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        admin_allPhysicians d = new admin_allPhysicians(f);
+        admin_allPhysicians d = new admin_allPhysicians(f,a);
         f.add(d);
     }//GEN-LAST:event_jButton2ActionPerformed
 

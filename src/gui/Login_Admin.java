@@ -5,6 +5,11 @@
  */
 package gui;
 
+import clients.admin;
+import java.util.Vector;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
+
 /**
  *
  * @author user
@@ -15,6 +20,7 @@ public class Login_Admin extends javax.swing.JPanel {
      * Creates new form Login_Admin
      */
     public general_login f;
+    Vector<admin> admins=new Vector<admin>();
     public Login_Admin() {
         initComponents();
     }
@@ -22,6 +28,14 @@ public class Login_Admin extends javax.swing.JPanel {
      public Login_Admin(general_login f) {
         initComponents();
         this.f = f;
+        admin a1=new admin("Sara","Ahmed","123","Sara@gmail.com");
+        admin a2=new admin("Sahar","Saber","456","Sahar@gmail.com");
+        admin a3=new admin("Muhammed","Ezzat","789","Ezzat@gmail.com");
+        admin a4=new admin("mohammed","mosaad","100","mosaad@gmail.com");
+        admins.add(a1);
+        admins.add(a2);
+        admins.add(a3);
+        admins.add(a4);
     }
      
     /**
@@ -214,9 +228,26 @@ public class Login_Admin extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
-        Dashboard_Admin d = new Dashboard_Admin(f);
-        f.add(d);
+        String pass=String.valueOf(jPasswordField1.getPassword());
+        String name=jTextField1.getText();
+        boolean exists=false;
+        int index=0;
+        for(int i=0;i<admins.size();i++)
+        {
+            if(admins.elementAt(i).getFirstN().contains(name)&&admins.elementAt(i).getUserpass().contains(pass))
+            {  
+                exists=true;
+                index=i;
+            }
+        }
+        if(exists)
+        {
+            this.setVisible(false);
+            Dashboard_Admin d = new Dashboard_Admin(f,admins.elementAt(index));
+            f.add(d);
+        }
+        else
+            JOptionPane.showMessageDialog(this,"Wrong password or name", "Error", ERROR_MESSAGE);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

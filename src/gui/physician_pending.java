@@ -23,11 +23,7 @@ public class physician_pending extends javax.swing.JPanel {
         initComponents();
         this.f =f;
     }
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) { 
-        this.setVisible(false);
-        new general_login(f).setVisible(true);
     
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -60,6 +56,11 @@ public class physician_pending extends javax.swing.JPanel {
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, -1, -1));
 
         jButton1.setText("continue ");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 450, 170, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -75,6 +76,11 @@ public class physician_pending extends javax.swing.JPanel {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+         this.setVisible(false);
+        new general_login(f).setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

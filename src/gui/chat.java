@@ -5,6 +5,8 @@
  */
 package gui;
 
+import clients.physician;
+
 /**
  *
  * @author user
@@ -18,10 +20,11 @@ public class chat extends javax.swing.JPanel {
     public chat() {
         initComponents();
     }
-    public chat(general_login f) {
+    public chat(general_login f, physician p,String id) {
         initComponents();
         this.f =f ;
     }
+ 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -46,7 +49,7 @@ public class chat extends javax.swing.JPanel {
 
         jLabel4.setFont(new java.awt.Font("Candara", 0, 24)); // NOI18N
         jLabel4.setText("Chat Plan");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 340, -1, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, -1, -1));
 
         jButton5.setBackground(new java.awt.Color(247, 241, 227));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/photos/back_arrow_1.png"))); // NOI18N
@@ -74,10 +77,10 @@ public class chat extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-        Member_Home m = new Member_Home(f);
-        f.add(m);
+//        // TODO add your handling code here:
+//        this.setVisible(false);
+//     
+//        f.add(m);
     }//GEN-LAST:event_jButton5ActionPerformed
 
 

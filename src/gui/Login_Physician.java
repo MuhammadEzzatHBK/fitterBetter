@@ -1,6 +1,7 @@
 package gui;
 
 import clients.admin;
+import clients.physician;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 
@@ -216,10 +217,12 @@ public class Login_Physician extends javax.swing.JPanel {
         // Mossadmake sure username and password are correct
         
         String pass=String.valueOf(jPasswordField1.getPassword());
-        if(admin.isreserved(pass))
-        {
+        String uname=jTextField1.getText();
+        if(admin.isreserved(pass,uname))
+        { 
+            physician p=(physician)admin.getPhysician(pass);
             this.setVisible(false);
-            Dashboard_Physician g =new Dashboard_Physician(f);
+            Dashboard_Physician g =new Dashboard_Physician(f,p);
             f.add(g);
         }
         else 
