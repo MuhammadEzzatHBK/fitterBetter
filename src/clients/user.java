@@ -37,11 +37,16 @@ public class user extends person implements Serializable {
       this.age = age;
       this.weight = weight;
       this.height = height;
-      bmi = weight/(height*height);
+      this.username=username;
       userno++;
       id = "U"+userno;
-     track.add(String.valueOf(weight));
-       requiredWater = weight/30;
+      track.add(String.valueOf(weight));
+      requiredWater = weight/30;
+      setBmi();
+      setGoalT();
+      setGoalM();
+      setState();
+ 
      }
      
       public void water_Ex(int ex)

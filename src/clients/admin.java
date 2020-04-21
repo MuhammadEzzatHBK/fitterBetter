@@ -16,7 +16,7 @@ public class admin extends person {
     private static int adminno = 0;
     private  Vector<chat> u_phchats;
             
-    admin(String firstN, String lastN, String userpass, String mail){
+  public  admin(String firstN, String lastN, String userpass, String mail){
       super(firstN, lastN,userpass, mail );
        
  
@@ -51,13 +51,7 @@ public class admin extends person {
     public static void setAdminno(int adminno) {
         admin.adminno = adminno;
     }
-    
-    public Object getUser(int index){
-        return (users.elementAt(index));
-    }
-    public Object getPhysician(int index){
-        return (phys.elementAt(index));
-    }
+   
     public boolean addUser(user X){
        users.add(X);
        int min = phys.elementAt(0).getPatients().size();
@@ -166,13 +160,52 @@ public class admin extends person {
                
         return(false);
     }
-    public static boolean isreserved(String Case){
+    public static boolean isreserved(String Case,String uname){
         for(int i =0;i<users.size();i++)
-            if(users.elementAt(i).getUserpass().contains(Case))
+            if(users.elementAt(i).getUserpass().contains(Case)&&users.elementAt(i).getUsername().contains(uname))
                 return(true);
         for(int i=0;i<phys.size();i++)
-            if(phys.elementAt(i).getUserpass().contains(Case))
+            if(phys.elementAt(i).getUserpass().contains(Case)&&phys.elementAt(i).getUname().contains(uname))
                 return(true);
         return(false);
+    }
+    public static boolean name_exists(String name){
+         for(int i =0;i<users.size();i++)
+            if(users.elementAt(i).getUsername().contains(name))
+                return(true);
+          for(int i=0;i<phys.size();i++)
+            if(phys.elementAt(i).getUname().contains(name))
+                return(true);
+        return(false);
+    }
+     public static Object getUserbyname(String name){
+        for(int i=0;i<users.size();i++)
+        {
+            if(users.elementAt(i).getUsername().contains(name))
+                return users.elementAt(i);
+        }
+         for(int i=0;i<phys.size();i++)
+        {
+            if(phys.elementAt(i).getUname().contains(name))
+                return phys.elementAt(i);
+        }
+        return -1;
+    }
+      
+    public static Object getUser(String pass){
+        for(int i=0;i<users.size();i++)
+        {
+            if(users.elementAt(i).getUserpass().contains(pass))
+                return users.elementAt(i);
+        }
+        return -1;
+    }
+    public static Object getPhysician(String pass){
+        for(int i=0;i<phys.size();i++)
+        {
+            if(phys.elementAt(i).getUserpass().contains(pass))
+                return phys.elementAt(i);
+        }
+        return -1;
     }
 }

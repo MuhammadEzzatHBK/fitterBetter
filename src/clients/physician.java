@@ -12,6 +12,7 @@ import java.util.*;
  */
 public class physician extends person {
     private int age;
+    String uname;
     private double salary;
     final static double baseSalary = 3000;
     private Vector<user> patients;
@@ -21,13 +22,19 @@ public class physician extends person {
     chat currentchat;
     
     
-    public physician(String firstN, String lastN, String userpass, String mail,int age){
+    public physician(String firstN, String lastN,String uname, String userpass, String mail,int age){
       super(firstN, lastN,userpass, mail );
       physno ++;
       id = new String("P"+physno);
       salary = baseSalary;
+      this.uname=uname;
       this.age = age;
+      patients=new Vector<user>();
     } 
+
+    public String getUname() {
+        return uname;
+    }
     public int getNumpatients() {
         return numpatients;
     }
@@ -45,16 +52,17 @@ public class physician extends person {
 
     public void setSalary(double salary) {
         this.salary = salary;
+       
     }
 
     public void raise(double raise){
         salary += raise;
     }
-    public Vector getPatients() {
+    public  Vector<user> getPatients() {
         return patients;
     }
 
-    public void setPatients(Vector patients) {
+    public void setPatients(Vector<user> patients) {
         this.patients = patients;
     }
 
