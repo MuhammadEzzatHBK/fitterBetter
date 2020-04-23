@@ -12,8 +12,17 @@ import java.util.ArrayList;
  * @author Sara-Labtop
  */
 public class chat {
-    String id,pid;
-    ArrayList<String> msgs=new ArrayList<String>();
+     String id,pid;
+
+    public ArrayList<String> getMsgs() {
+        return msgs;
+    }
+    public String lastmsgs(){
+        if(msgs.size()>0)
+        return msgs.get(msgs.size()-1);
+        else return null;
+    }
+   private  ArrayList<String> msgs=new ArrayList<String>();
     public chat(String id,String pid){
         this.id=id;
         this.pid=pid;
@@ -21,10 +30,4 @@ public class chat {
     public void sendmsg(String m){
         msgs.add(m);
     }
-    public void viewmsg(){
-        for(int i=0;i<msgs.size();i++){
-            msgs.get(i);
-        }
-    }
-    
-}
+ }

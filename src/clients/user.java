@@ -1,270 +1,230 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package clients;
 import java.util.*;
-import javax.mail.*;
-import javax.mail.Authenticator;
-import javax.mail.PasswordAuthentication;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import java.util.Properties;
+import java.io.Serializable;
+import java.util.logging.Logger;
+/**
+ *
+ * @author lenovo
+ */
+public class user extends person implements Serializable {
+    private String id, pid, state,username,gender;
 
-
-
-
-public class admin extends person {
-    private String id;
-    private static Vector<user> users=new Vector<user>();
-    private static Vector<physician> phys= new Vector<physician>();
-    private static int adminno = 0;
-    private  Vector<chat> u_phchats;
-            
-  public  admin(String firstN, String lastN, String userpass, String mail){
+    static int userno = 0;
+    private int age;
+    private double weight, height, bmi,goalM;
+    private int goalT;
+    private int xp ;
+    private ArrayList<String> track=new ArrayList<String>();
+    private boolean active = false;
+    private chat currentchat;
+    private ArrayList<String> breakfast;
+    private ArrayList<String> lunch;
+    private ArrayList<String> dinner;
+    private double requiredWater;
+    private double actualWater;
+    private static final long serialVersionUID = 1L;
+   
+    
+    public user(){
+     
+    }
+    public user(String firstN, String lastN,String username, String userpass, String mail, int age , double weight , double height ){
       super(firstN, lastN,userpass, mail );
-       
+      this.age = age;
+      this.weight = weight;
+      this.height = height;
+      this.username=username;
+      userno++;
+      id = "U"+userno;
+      track.add(String.valueOf(weight));
+      requiredWater = weight/30;
+      setBmi();
+      setGoalT();
+      setGoalM();
+      setState();
  
-      adminno++;
-      id = new String("A"+adminno);
+     }
+     
+      public void water_Ex(int ex)
+    {
+        requiredWater = weight/30;
+        requiredWater += 0.35*ex;
     }
-    public Vector<chat> getU_phchats() {
-        return u_phchats;
+    public void water_Drink(double amount)
+    {
+        actualWater += amount;
+        water_Compare();
     }
+    public double water_Compare()
+    {
+        return (actualWater/requiredWater)*100;
+    }
+    public double getRequiredWater() {
+        return requiredWater;
+    }
+
+    public double getActualWater() {
+        return actualWater;
+    }
+    
+     public void getchat(Vector<chat> Allchats)
+     {
+         for(int i=0;i<Allchats.size();i++)
+         {
+            if(Allchats.get(i).id.equals(id))
+                currentchat=Allchats.get(i);
+         }
+     }
+
+    public chat getCurrentchat() {
+        return currentchat;
+    }
+    
     public String getId() {
         return id;
     }
+
     public void setId(String id) {
         this.id = id;
     }
-    public static Vector getUsers() {
-        return users;
-    }
-    public static void setUsers(Vector users) {
-        admin.users = users;
-    }
-    public static Vector getPhys() {
-        return phys;
-    }
-    public static void setPhys(Vector phys) {
-        admin.phys = phys;
-    }
-    public static int getAdminno() {
-        return adminno;
+
+    public String getPid() {
+        return pid;
     }
 
-    public static void setAdminno(int adminno) {
-        admin.adminno = adminno;
+    public void setPid(String pid) {
+        this.pid = pid;
     }
-   
-    public boolean addUser(user X){
-       users.add(X);
-       int min = phys.elementAt(0).getPatients().size();
-       int minindex = 0;
-       for(int i =0;i<phys.size();i++){
-          if(phys.elementAt(i).getPatients().size() < min){
-            min = phys.elementAt(i).getPatients().size();
-            minindex=i;
-          }
-       }
-       phys.elementAt(minindex).getPatients().add(X);
-       X.setPid(phys.elementAt(minindex).getId());
-       String ID = X.getId();
-       return(isfound(ID,"user"));
+
+    public static int getUserno() {
+        return userno;
     }
-    public boolean addPhysician(physician X){
-        phys.add(X);
-        String ID = X.getId();
-        return(isfound(ID,"physician"));
+
+    public static void setUserno(int userno) {
+        user.userno = userno;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+    
+    public void setWeight(double weight) {
+        this.weight = weight;
+       track.add(String.valueOf(weight));
+    }
+    public String getGender() {
+        return gender;
+    }
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public double getBmi() {
+        return bmi;
+    }
+
+    public void setBmi() {
+       double h=(height*height);
+      bmi=(weight/h)*10000;
         
     }
-    public void removeUser(String id){
-        int uremoval = -1;
-        int premoval = -1;
-        int puremoval = -1;
-        for(int i = 0;i<users.size();i++){
-        if(users.elementAt(i).getId() == id)
-            uremoval = i;
-        }
-        if(uremoval == -1)
-            return;
-        for(int i = 0;i<phys.size();i++){
-          Vector<user> X = phys.elementAt(i).getPatients();
-          for(int j = 0; j<X.size();j++){
-              if(X.elementAt(j).getId()==id){
-              premoval = i;    
-              puremoval = j;
-              }
-                  
-          }
-        }
-        if(premoval == -1 || puremoval == -1)
-            return;
-        phys.elementAt(premoval).getPatients().removeElementAt(puremoval);
-        users.removeElementAt(uremoval);
-      
+    
+    public String getUsername() {
+        return username;
     }
-    public void removePhysician(String id){
-       int removal = -1;
-    for(int i=0;i<phys.size();i++){
-        if(phys.elementAt(i).getId()==id)
-            removal = i;
+
+    public double getWeight() {
+        return weight;
     }
-    if(removal == -1)
-        return;
-    for(int i=0;i<phys.elementAt(removal).getPatients().size();i++){
-       int min = phys.elementAt(0).getPatients().size();
-       int minindex = 0;
-       for(int j =0;j<phys.size();j++){
-          if(phys.elementAt(j).getPatients().size() < min){
-            min = phys.elementAt(j).getPatients().size();
-            minindex=j;
-          }
+
+    public double getGoalM() {
+        return goalM;
+    }
+
+    public void setGoalM() {
+      double temp;
+      double h=(height*height);
+        setGoalT();
+       if(goalT==1)
+          temp=bmi-25;
+       else temp=25-bmi;
+       goalM=(temp/10000)*h;
+    }
+
+    public int getGoalT() {
+        return goalT;
+    }
+
+    public void setGoalT() {
+        if(bmi > 25)
+            goalT = 1;
+        else if(bmi<20)
+            goalT = -1;
+        else goalT=0;
+    }
+    public boolean weekupdate(){
+        double diff,thisweek,lastweek;
+       if(track.size()>1)
+       {
+           thisweek=Double.valueOf(track.get(track.size()-1));
+           lastweek=Double.valueOf(track.get(track.size()-2));
+           diff =thisweek-lastweek;
+           if(diff>0)
+               return true;
+           else return false;
        }
-       phys.elementAt(minindex).getPatients().addElement(phys.elementAt(removal).getPatients().elementAt(i));
-       int x = phys.elementAt(minindex).getPatients().size();
-       user added = (user)phys.elementAt(minindex).getPatients().elementAt(x-1);
-       added.setPid(phys.elementAt(minindex).getId());
+       else return true;
+        
+        
     }
-    phys.removeElementAt(removal);
-    
+    public int getXp() {
+        return xp;
     }
-    public void activate(String userid){
-        for(int i=0;i<users.size();i++){
-        if(users.elementAt(i).getId().equals(userid))
-            users.elementAt(i).activate();
-        }
+
+    public void setXp(int xp) {
+        this.xp = xp;
     }
-    public Vector<user> searchUsers(String n){
-    Vector<user>target = new Vector();
-    for(int i=0;i<users.size();i++){
-        if(users.elementAt(i).getFirstN().contains(n)||users.elementAt(i).getLastN().contains(n))
-            target.add(users.elementAt(i));
+    public void incXp(int x) {
+        xp  += x;
     }
-    return(target);
+    public String getState(){
+        return state;
     }
-    public Vector<physician> searchPhys(String n){
-     Vector<physician>target = new Vector();
-    for(int i=0;i<phys.size();i++){
-        if(phys.elementAt(i).getFirstN().contains(n)||phys.elementAt(i).getLastN().contains(n))
-            target.add(phys.elementAt(i));
-    }
-    return(target);
-    
-    }
-     public static boolean isfound(String id,String orin){
-        if(orin.equals("user"))
-            for(int i=0;i<users.size();i++)
-                if(users.elementAt(i).getId().equals(id))
-                    return(true);
-            
+    public void setState(){
+        if(bmi <20)
+            state = "Underweight";
+        else if(bmi<=25)
+            state = "Fit";
+        else if(bmi < 30)
+            state = "Overweight";
+        else if(bmi < 35)
+            state = "Obese";
         else
-            for(int j=0;j<phys.size();j++)
-                if(phys.elementAt(j).getId().equals(id))
-                    return(true);
-               
-        return(false);
-    }
-    public static boolean isreserved(String Case,String uname){
-        for(int i =0;i<users.size();i++)
-            if(users.elementAt(i).getUserpass().contains(Case)&&users.elementAt(i).getUsername().contains(uname))
-                return(true);
-        for(int i=0;i<phys.size();i++)
-            if(phys.elementAt(i).getUserpass().contains(Case)&&phys.elementAt(i).getUname().contains(uname))
-                return(true);
-        return(false);
-    }
-    public static boolean name_exists(String name){
-         for(int i =0;i<users.size();i++)
-            if(users.elementAt(i).getUsername().contains(name))
-                return(true);
-          for(int i=0;i<phys.size();i++)
-            if(phys.elementAt(i).getUname().contains(name))
-                return(true);
-        return(false);
-    }
-     public static Object getUserbyname(String name){
-        for(int i=0;i<users.size();i++)
-        {
-            if(users.elementAt(i).getUsername().contains(name))
-                return users.elementAt(i);
-        }
-         for(int i=0;i<phys.size();i++)
-        {
-            if(phys.elementAt(i).getUname().contains(name))
-                return phys.elementAt(i);
-        }
-        return -1;
-    }
-      
-    public static Object getUser(String pass){
-        for(int i=0;i<users.size();i++)
-        {
-            if(users.elementAt(i).getUserpass().contains(pass))
-                return users.elementAt(i);
-        }
-        return -1;
-    }
-    public static Object getPhysician(String pass){
-        for(int i=0;i<phys.size();i++)
-        {
-            if(phys.elementAt(i).getUserpass().contains(pass))
-                return phys.elementAt(i);
-        }
-        return -1;
+            state = "Severely obese";
     }
     
-    public  void sendMail(String Title, String Msg,  boolean toUsers)
-    {
-        final String username = "betterfitter.program@gmail.com";
-        final String password = "fcisoopbio1";
-
-        Properties prop = new Properties();
-        prop.put("mail.smtp.auth", "true");
-        prop.put("mail.smtp.starttls.enable", "true");
-        prop.put("mail.smtp.host", "smtp.gmail.com");
-        prop.put("mail.smtp.port", "587");
-        
-        Session session = Session.getInstance(prop,
-                new javax.mail.Authenticator() {
-                    @Override
-                    protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication(username, password);
-                    }
-                });
-        
-        try {
-
-            Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(username));
-            if (toUsers == true)
-                for (int i = 0;i < users.size(); i++)
-                {
-                    message.setRecipients(
-                            Message.RecipientType.TO,
-                            InternetAddress.parse(users.get(i).getMail())
-                    );
-                }
-            else 
-                for (int i = 0;i < phys.size(); i++)
-                {
-                    message.setRecipients(
-                            Message.RecipientType.TO,
-                            InternetAddress.parse(phys.get(i).getMail())
-                    );
-                }
-            
-            message.setSubject(Title);
-            
-            message.setText(Msg);
-            
-            //String htmlCode = "<h2>Weekly Progress<h2/>"
-            //        + "<h5>Keep Up the good work<h5/>";
-            //message.setContent(htmlCode, "text/html");
-
-            Transport.send(message);
-
-            System.out.println("Done");
-
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        }
- 
+    public ArrayList<String> getTrack(){
+        return track;
     }
+    public void activate(){active = true;}
+
+   
+    
+    
 }
+
+
+

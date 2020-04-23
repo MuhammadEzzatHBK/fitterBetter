@@ -1,20 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package clients;
 import java.util.*;
-/**
- *
- * @author lenovo
- */
+import javax.mail.Authenticator;
+import javax.mail.*;
+import javax.mail.Authenticator;
+import javax.mail.PasswordAuthentication;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import java.util.Properties;
+
+
+
+
 public class admin extends person {
     private String id;
     private static Vector<user> users=new Vector<user>();
     private static Vector<physician> phys= new Vector<physician>();
     private static int adminno = 0;
-    private  Vector<chat> u_phchats;
+    private static Vector<chat> u_phchats;
             
   public  admin(String firstN, String lastN, String userpass, String mail){
       super(firstN, lastN,userpass, mail );
@@ -23,7 +25,7 @@ public class admin extends person {
       adminno++;
       id = new String("A"+adminno);
     }
-    public Vector<chat> getU_phchats() {
+    public static Vector<chat> getU_phchats() {
         return u_phchats;
     }
     public String getId() {
@@ -83,6 +85,7 @@ public class admin extends person {
         }
         if(uremoval == -1)
             return;
+         users.removeElementAt(uremoval);
         for(int i = 0;i<phys.size();i++){
           Vector<user> X = phys.elementAt(i).getPatients();
           for(int j = 0; j<X.size();j++){
@@ -96,7 +99,7 @@ public class admin extends person {
         if(premoval == -1 || puremoval == -1)
             return;
         phys.elementAt(premoval).getPatients().removeElementAt(puremoval);
-        users.removeElementAt(uremoval);
+       
       
     }
     public void removePhysician(String id){
@@ -207,5 +210,63 @@ public class admin extends person {
                 return phys.elementAt(i);
         }
         return -1;
+    }
+    
+    public  void sendMail(String Title, String Msg,  boolean toUsers)
+    {
+        final String username = "betterfitter.program@gmail.com";
+        final String password = "fcisoopbio1";
+
+        Properties prop = new Properties();
+        prop.put("mail.smtp.auth", "true");
+        prop.put("mail.smtp.starttls.enable", "true");
+        prop.put("mail.smtp.host", "smtp.gmail.com");
+        prop.put("mail.smtp.port", "587");
+        
+        Session session = Session.getInstance(prop,
+                new javax.mail.Authenticator() {
+                    @Override
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(username, password);
+                    }
+                });
+        
+        try {
+
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(username));
+            if (toUsers == true)
+                for (int i = 0;i < users.size(); i++)
+                {
+                    message.setRecipients(
+                            Message.RecipientType.TO,
+                            InternetAddress.parse(users.get(i).getMail())
+                    );
+                }
+            else 
+                for (int i = 0;i < phys.size(); i++)
+                {
+                    message.setRecipients(
+                            Message.RecipientType.TO,
+                            InternetAddress.parse(phys.get(i).getMail())
+                    );
+                }
+            
+            message.setSubject(Title);
+            
+            message.setText(Msg);
+            
+            //String htmlCode = "<h2>Weekly Progress<h2/>"
+            //        + "<h5>Keep Up the good work<h5/>";
+            //message.setContent(htmlCode, "text/html");
+
+            Transport.send(message);
+
+            System.out.println("Done");
+
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
+ 
     }
 }
