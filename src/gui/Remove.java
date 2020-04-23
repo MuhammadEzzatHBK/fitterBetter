@@ -12,16 +12,19 @@ import javax.swing.JFrame;
  *
  * @author user
  */
+  
 public class Remove extends javax.swing.JDialog {
 
     /**
      * Creates new form NewJDialog
      */
+    public general_login f;
     admin a;
     String id;
-    public Remove(java.awt.Frame parent, boolean modal,admin a,String id) {
+    public Remove(java.awt.Frame parent, boolean modal,general_login f,admin a,String id) {
         super(parent, modal);
         initComponents();
+        this.f=f;
         this.a=a;
         this.id=id;
     }
@@ -110,6 +113,8 @@ public class Remove extends javax.swing.JDialog {
         a.removeUser(id);
         a.removePhysician(id);
         this.dispose();
+        admin_allMembers m = new admin_allMembers(f,a);
+        f.add(m);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**

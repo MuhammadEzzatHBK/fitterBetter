@@ -321,7 +321,7 @@ public class Dashboard_Physician extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
            this.setVisible(false);
-           chat c=new chat(f,p,"");
+             Chat_room c=new   Chat_room(f,p,"");
            f.add(c);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -330,7 +330,7 @@ public class Dashboard_Physician extends javax.swing.JPanel {
         int index=jTable2.getSelectedRow();
         String u_id=(String)model.getValueAt(index, 0);
           this.setVisible(false);
-        chat c=new chat(f,p,u_id);
+          Chat_room c=new   Chat_room(f,p,u_id);
         f.add(c);
     }//GEN-LAST:event_jTable2MouseClicked
 

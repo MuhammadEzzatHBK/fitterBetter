@@ -86,11 +86,7 @@ public class admin_allMembers extends javax.swing.JPanel {
         jTable2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"", null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "ID", "Username", "Name", "E-mail", "Age", "Height", "Weight", "Gender", "Phy_id"
@@ -265,7 +261,7 @@ public class admin_allMembers extends javax.swing.JPanel {
          DefaultTableModel model=(DefaultTableModel)jTable2.getModel();
          int index=jTable2.getSelectedRow();
           String u_id=(String) model.getValueAt(index, 0);
-          new Remove(null, true,a,u_id).show();
+          new Remove(null, true,f,a,u_id).setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed

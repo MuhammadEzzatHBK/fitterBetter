@@ -29,10 +29,13 @@ public class Member_Home extends javax.swing.JPanel {
     //jLabel4.setText(u.getUsername());
     jLabel4.setText(u1.getUsername());
     jLabel27.setText(String.valueOf(u1.getXp()));
-    if(u1.isGoalT())
+    int gtype=u1.getGoalT();
+    if(gtype==1)
      jLabel22.setText("Lose");
-    else
+    else if(gtype==-1)
       jLabel22.setText("Gain");
+    else 
+        jLabel22.setText("maintain");
     }
 
     /**
@@ -612,8 +615,8 @@ public class Member_Home extends javax.swing.JPanel {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
                     this.setVisible(false);
-        chat e = new chat(f);
-        f.add(e);
+        Chat_room e = new Chat_room(f,u1);
+         f.add(e);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed

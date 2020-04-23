@@ -32,17 +32,18 @@ public class admin_allPhysicians extends javax.swing.JPanel {
     }
       public void addrow(){
         DefaultTableModel m= (DefaultTableModel)jTable2.getModel();
-        Object rowdata[] =new Object[6];
+        Object rowdata[] =new Object[7];
         Vector<physician> temp;
         temp= admin.getPhys();
         for(int i=0;i<temp.size();i++)
         {
             rowdata[0]=temp.elementAt(i).getId();
             rowdata[1]=temp.elementAt(i).getFirstN();
-            rowdata[2]=temp.elementAt(i).getMail();
-            rowdata[3]=temp.elementAt(i).getAge();
-            rowdata[4]=temp.elementAt(i).getNumpatients();
-            rowdata[5]=temp.elementAt(i).getSalary();
+            rowdata[2]=temp.elementAt(i).getUname();
+            rowdata[3]=temp.elementAt(i).getMail();
+            rowdata[4]=temp.elementAt(i).getAge();
+            rowdata[5]=temp.elementAt(i).getNumpatients();
+            rowdata[6]=temp.elementAt(i).getSalary();
             m.addRow(rowdata);
         }
     }
@@ -85,7 +86,7 @@ public class admin_allPhysicians extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "Name", "E-mail", "Age", "#patients", "Salary"
+                "ID", "Name", "username", "email", "age", "#patients", "salary"
             }
         ));
         jTable2.setGridColor(new java.awt.Color(247, 241, 227));
@@ -279,7 +280,7 @@ public class admin_allPhysicians extends javax.swing.JPanel {
          DefaultTableModel model=(DefaultTableModel)jTable2.getModel();
          int index=jTable2.getSelectedRow();
           String id=(String) model.getValueAt(index, 0);
-        new Remove(null, true,a,id).show();
+        new Remove(null, true,f,a,id).setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
