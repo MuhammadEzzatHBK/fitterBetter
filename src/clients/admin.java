@@ -172,44 +172,40 @@ public class admin extends person {
                 return(true);
         return(false);
     }
-    public static boolean name_exists(String name){
-         for(int i =0;i<users.size();i++)
-            if(users.elementAt(i).getUsername().contains(name))
-                return(true);
-          for(int i=0;i<phys.size();i++)
-            if(phys.elementAt(i).getUname().contains(name))
-                return(true);
-        return(false);
-    }
-     public static Object getUserbyname(String name){
-        for(int i=0;i<users.size();i++)
-        {
-            if(users.elementAt(i).getUsername().contains(name))
-                return users.elementAt(i);
-        }
+    public static boolean isfoundN(String n){
+         for(int i=0;i<users.size();i++)
+        if(users.elementAt(i).getUserpass().contains(n))
+            return true;
+    
          for(int i=0;i<phys.size();i++)
-        {
-            if(phys.elementAt(i).getUname().contains(name))
-                return phys.elementAt(i);
-        }
-        return -1;
+             if(phys.elementAt(i).getUserpass().contains(n))
+                 return true;
+         
+         
+        return false;
+    }
+     public static Object getUserbyusername(String username){
+        for(int i =0; i<users.size();i++){
+            if(users.elementAt(i).getUserpass().contains(username))
+                return users.elementAt(i);
+        }   
+        return "Username doesn't exist !";
     }
       
-    public static Object getUser(String pass){
-        for(int i=0;i<users.size();i++)
-        {
-            if(users.elementAt(i).getUserpass().contains(pass))
-                return users.elementAt(i);
+   public static Object getbyPassword(String password, String orin){
+        if(orin.equals("user")){
+            for(int i=0;i<users.size();i++)
+                if(users.elementAt(i).getUserpass().contains(password))
+                    return users.elementAt(i);
+        
+        }else{
+            for(int i=0;i<phys.size();i++)
+                if(phys.elementAt(i).getUserpass().contains(password))
+                    return phys.elementAt(i);
+            
         }
-        return -1;
-    }
-    public static Object getPhysician(String pass){
-        for(int i=0;i<phys.size();i++)
-        {
-            if(phys.elementAt(i).getUserpass().contains(pass))
-                return phys.elementAt(i);
-        }
-        return -1;
+        return "Password doesn't exist";
+    
     }
     
     public  void sendMail(String Title, String Msg,  boolean toUsers)
