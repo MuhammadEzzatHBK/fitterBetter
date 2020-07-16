@@ -152,15 +152,17 @@ public class admin extends person {
     }
      public static boolean isfound(String id,String orin){
         if(orin.equals("user"))
+        {
             for(int i=0;i<users.size();i++)
                 if(users.elementAt(i).getId().equals(id))
                     return(true);
-            
+        } 
         else
+        {
             for(int j=0;j<phys.size();j++)
                 if(phys.elementAt(j).getId().equals(id))
                     return(true);
-               
+        }
         return(false);
     }
     public static boolean isreserved(String Case,String uname){
