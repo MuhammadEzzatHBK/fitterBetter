@@ -35,6 +35,9 @@ public class physician extends person {
     public String getUname() {
         return uname;
     }
+    public void setUname(String uname) {
+        this.uname = uname;
+    }
     public int getNumpatients() {
         return numpatients;
     }
