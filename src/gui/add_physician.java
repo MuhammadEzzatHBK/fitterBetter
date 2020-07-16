@@ -269,7 +269,6 @@ public class add_physician extends javax.swing.JPanel {
         jTextField10.setBackground(new java.awt.Color(247, 241, 227));
         jTextField10.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jTextField10.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField10.setText("...");
         jTextField10.setBorder(null);
         jTextField10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -412,7 +411,7 @@ public class add_physician extends javax.swing.JPanel {
         String mail=jTextField8.getText();
         int age=Integer.valueOf(jTextField10.getText());
         //int age=Integer.valueOf(jTextField10.getText());
-        if(admin.name_exists(uname)){
+        if(admin.isreserved(pass, uname)){
             JOptionPane.showMessageDialog(this,"username already exist", "Error", ERROR_MESSAGE);
         }
         else{

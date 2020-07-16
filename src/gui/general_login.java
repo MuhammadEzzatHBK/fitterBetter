@@ -1,13 +1,16 @@
 package gui;
 
+import clients.admin;
+import clients.user;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
+import java.util.Vector;
 import javax.swing.JPanel;
  
 public class general_login extends javax.swing.JFrame {
-
+    
     general_login f;
-    public general_login() {
+    public general_login(){
         initComponents();
     }
    
@@ -81,7 +84,7 @@ public class general_login extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(391, 391, 391)
+                .addGap(388, 388, 388)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)

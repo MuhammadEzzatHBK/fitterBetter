@@ -111,28 +111,7 @@ public class Search extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        String n=jTextField1.getText();
-        user u;
-        physician p;
-        if(admin.name_exists(n))
-        {
-             
-            Object o=admin.getUserbyname(n);
-            if( o instanceof user)
-            {
-             u=(user)o;
-              jLabel1.setText(u.getId());
-            
-                     
-            }
-            else{
-                p=(physician) o;
-                 jLabel1.setText(p.getId());
-                  
-            }
-        }
-     
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

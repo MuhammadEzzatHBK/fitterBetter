@@ -196,9 +196,9 @@ public class p_add_Member extends javax.swing.JPanel {
         // TODO add your handling code here:
         String uname= jTextField9.getText();
         String mail= jTextField8.getText();
-        if(admin.name_exists(uname)){
-           
-                  user u=(user)admin.getUserbyname(uname);
+         Object unametest=admin.getUserbyusername(uname);
+        if(unametest instanceof user){
+                  user u=(user)admin.getUserbyusername(uname);
                   Vector<user> temp=p.getPatients();
                   temp.add(u);
                   p.setPatients(temp);

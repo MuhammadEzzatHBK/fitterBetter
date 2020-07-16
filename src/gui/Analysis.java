@@ -284,20 +284,20 @@ public class Analysis extends javax.swing.JPanel {
        u1.setGoalT();
        u1.setGoalM();
        u1.setState();
-        jLabel3.setText(String.valueOf(u1.getBmi()));
+        jLabel3.setText(String.valueOf((float)u1.getBmi()));
         jLabel5.setText(u1.getState());
        
      int gtype=u1.getGoalT();
     if(gtype==1)
     {
         jLabel8.setText("Lose");
-        jLabel6.setText(String.valueOf(u1.getGoalM()));
+        jLabel6.setText(String.valueOf((float)u1.getGoalM()));
     }
       
     else if(gtype==-1)
     {
         jLabel8.setText("Gain");
-          jLabel6.setText(String.valueOf(u1.getGoalM()));
+          jLabel6.setText(String.valueOf((float)u1.getGoalM()));
     }
             
     else 

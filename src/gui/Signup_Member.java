@@ -350,14 +350,12 @@ public class Signup_Member extends javax.swing.JPanel {
         int age=Integer.parseInt(jTextField5.getText());
         double weight=Double.parseDouble(jTextField6.getText());
         double height=Double.parseDouble(jTextField4.getText());
-        if(admin.name_exists(uname)){
+        if(admin.isreserved(pass, uname)){
             JOptionPane.showMessageDialog(this,"username already exist", "Error", ERROR_MESSAGE);
-        }
-            
-            
+        }  
         else{
                   Vector<user> temp;
-                  user u=new user(fname," ",uname,pass,mail,age,weight ,height );
+                  user u=new user(fname," ",uname,pass,mail,age,weight ,height);
                   temp=admin.getUsers();
                   temp.add(u);
                   this.setVisible(false);

@@ -321,7 +321,7 @@ public class Sigup_Physician extends javax.swing.JPanel {
         String mail=jTextField8.getText();
         int a=Integer.valueOf(jTextField2.getText());
         //int age=Integer.valueOf(jTextField10.getText());
-        if(admin.name_exists(uname)){
+       if(admin.isreserved(pass, uname)){
             JOptionPane.showMessageDialog(this,"username already exist", "Error", ERROR_MESSAGE);
         }
         else{
