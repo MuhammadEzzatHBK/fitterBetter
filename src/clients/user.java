@@ -28,11 +28,7 @@ public class user extends person implements Serializable {
     private double requiredWater;
     private double actualWater;
     private static final long serialVersionUID = 1L;
-   
-    
-    public user(){
-     
-    }
+  
     public user(String firstN, String lastN,String username, String userpass, String mail, int age , double weight , double height ){
       super(firstN, lastN,userpass, mail );
       this.age = age;
@@ -183,8 +179,8 @@ public class user extends person implements Serializable {
            lastweek=Double.valueOf(track.get(track.size()-2));
            diff =thisweek-lastweek;
            if(diff>0)
-               return true;
-           else return false;
+               return false;
+           else return true;
        }
        else return true;
         
