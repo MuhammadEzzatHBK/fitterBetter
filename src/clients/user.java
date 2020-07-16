@@ -25,6 +25,7 @@ public class user extends person implements Serializable {
     private ArrayList<String> breakfast;
     private ArrayList<String> lunch;
     private ArrayList<String> dinner;
+
     private double requiredWater;
     private double actualWater;
     private static final long serialVersionUID = 1L;
@@ -46,30 +47,22 @@ public class user extends person implements Serializable {
  
      }
      
+      public void water_Ex(int ex)
+    {
+        requiredWater = weight/30;
+        requiredWater += 0.35*ex;
+    }
     public void water_Drink(double amount)
     {
         actualWater += amount;
-        incXp((int) (amount * 100));
+        water_Compare();
     }
     public double water_Compare()
     {
         return (actualWater/requiredWater)*100;
     }
-    public double water_exercise()
-    {
-        incXp(100);
-         return requiredWater += 0.35;
-         
-    }
-    
-    
-    public double getRequiredWater(boolean newDay) {
-        if (newDay == true)
-        {    actualWater = 0;
-           return requiredWater = weight/30;
-        }else 
-            
-            return requiredWater;
+    public double getRequiredWater() {
+        return requiredWater;
     }
 
     public double getActualWater() {
@@ -87,6 +80,10 @@ public class user extends person implements Serializable {
 
     public chat getCurrentchat() {
         return currentchat;
+    }
+    
+    public void setUsername(String username) {
+        this.username = username;
     }
     
     public String getId() {
@@ -119,10 +116,6 @@ public class user extends person implements Serializable {
 
     public void setAge(int age) {
         this.age = age;
-    }
-
-    public void setActualWater(double actualWater) {
-        this.actualWater = actualWater;
     }
     
     public void setWeight(double weight) {
@@ -202,6 +195,9 @@ public class user extends person implements Serializable {
         return xp;
     }
 
+    public void setXp(int xp) {
+        this.xp = xp;
+    }
     public void incXp(int x) {
         xp  += x;
     }
