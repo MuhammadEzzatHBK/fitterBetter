@@ -79,9 +79,9 @@ public class exercise extends javax.swing.JPanel {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-//        this.setVisible(false);
-//      //  Member_Home m = new Member_Home(f);
-//        f.add(m);
+        this.setVisible(false);
+        Member_Home m = new Member_Home(f, u1);
+        f.add(m);
     }//GEN-LAST:event_jButton5ActionPerformed
 
 

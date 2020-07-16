@@ -28,6 +28,7 @@ public class admin_allPhysicians extends javax.swing.JPanel {
         initComponents();
         this.f = f;
         this.a=a;
+        jLabel2.setText(a.getFirstN());
         addrow();
     }
       public void addrow(){
@@ -281,6 +282,7 @@ public class admin_allPhysicians extends javax.swing.JPanel {
          int index=jTable2.getSelectedRow();
           String id=(String) model.getValueAt(index, 0);
         new Remove(null, true,f,a,id).setVisible(true);
+        
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed

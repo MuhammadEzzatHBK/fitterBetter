@@ -614,7 +614,7 @@ public class Member_Home extends javax.swing.JPanel {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-                    this.setVisible(false);
+        this.setVisible(false);
         Chat_room e = new Chat_room(f,u1);
          f.add(e);
     }//GEN-LAST:event_jButton3ActionPerformed

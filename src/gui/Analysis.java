@@ -309,10 +309,11 @@ public class Analysis extends javax.swing.JPanel {
        {
            jLabel9.setText("Keep making Progress!!");
            jLabel10.setText("You are on track");
+           u1.incXp(100);
        }
        else
          {
-              jLabel9.setText("ohh..you are a little off track :(");
+           jLabel9.setText("ohh..you are a little off track :(");
            jLabel10.setText(" keep working hard to get back on track!!");
          }
            
