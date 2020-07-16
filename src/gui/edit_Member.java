@@ -6,6 +6,7 @@
 package gui;
 
 import clients.admin;
+import clients.user;
 
 /**
  *
@@ -18,13 +19,22 @@ public class edit_Member extends javax.swing.JPanel {
      */
     general_login f;
     admin a;
+    user edit_user;
     public edit_Member() {
         initComponents();
     }
-        public edit_Member(general_login f,admin a) {
+     public edit_Member(general_login f,admin a,String upass) {
         initComponents();
         this.a=a;
         this.f =f ;
+        edit_user =(user)a.getbyPassword(upass,"user");
+        jTextField9.setText(edit_user.getUsername());
+        jTextField1.setText(edit_user.getFirstN());
+        jTextField3.setText(upass);
+        jTextField8.setText(edit_user.getMail());
+        jTextField2.setText(String.valueOf(edit_user.getAge()));
+        jTextField12.setText(String.valueOf(edit_user.getWeight()));
+        jTextField4.setText(String.valueOf(edit_user.getHeight()));
     }
 
     /**
@@ -60,24 +70,14 @@ public class edit_Member extends javax.swing.JPanel {
         jLabel13 = new javax.swing.JLabel();
         jTextField9 = new javax.swing.JTextField();
         jSeparator10 = new javax.swing.JSeparator();
-        jPanel10 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
-        jSeparator11 = new javax.swing.JSeparator();
-        jPanel11 = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
-        jSeparator12 = new javax.swing.JSeparator();
         jPanel12 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jTextField12 = new javax.swing.JTextField();
         jSeparator13 = new javax.swing.JSeparator();
-        jPanel13 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
-        jSeparator14 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
 
         jPanel2.setBackground(new java.awt.Color(247, 241, 227));
         jPanel2.setForeground(new java.awt.Color(247, 241, 227));
@@ -117,7 +117,6 @@ public class edit_Member extends javax.swing.JPanel {
         jTextField1.setBackground(new java.awt.Color(247, 241, 227));
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField1.setText("Enter Name");
         jTextField1.setBorder(null);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,7 +157,6 @@ public class edit_Member extends javax.swing.JPanel {
         jTextField3.setBackground(new java.awt.Color(247, 241, 227));
         jTextField3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jTextField3.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField3.setText("Enter Password");
         jTextField3.setBorder(null);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -194,7 +192,6 @@ public class edit_Member extends javax.swing.JPanel {
         jTextField4.setBackground(new java.awt.Color(247, 241, 227));
         jTextField4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jTextField4.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField4.setText("...");
         jTextField4.setBorder(null);
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -237,7 +234,6 @@ public class edit_Member extends javax.swing.JPanel {
         jTextField8.setBackground(new java.awt.Color(247, 241, 227));
         jTextField8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jTextField8.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField8.setText("Enter Email");
         jTextField8.setBorder(null);
         jTextField8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -252,9 +248,11 @@ public class edit_Member extends javax.swing.JPanel {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel12))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
@@ -262,10 +260,14 @@ public class edit_Member extends javax.swing.JPanel {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
 
         jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, -1, -1));
@@ -278,7 +280,6 @@ public class edit_Member extends javax.swing.JPanel {
         jTextField9.setBackground(new java.awt.Color(247, 241, 227));
         jTextField9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jTextField9.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField9.setText("Enter Username");
         jTextField9.setBorder(null);
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
@@ -306,92 +307,6 @@ public class edit_Member extends javax.swing.JPanel {
 
         jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, -1, -1));
 
-        jPanel10.setBackground(new java.awt.Color(247, 241, 227));
-
-        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel14.setText("Age: ");
-
-        jTextField10.setBackground(new java.awt.Color(247, 241, 227));
-        jTextField10.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextField10.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField10.setText("...");
-        jTextField10.setBorder(null);
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 484, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        jPanel2.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 150, -1, -1));
-
-        jPanel11.setBackground(new java.awt.Color(247, 241, 227));
-
-        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel15.setText("Age");
-
-        jTextField11.setBackground(new java.awt.Color(247, 241, 227));
-        jTextField11.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextField11.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField11.setText("...");
-        jTextField11.setBorder(null);
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addComponent(jLabel15)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 484, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        jPanel2.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 150, -1, -1));
-
         jPanel12.setBackground(new java.awt.Color(247, 241, 227));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -400,7 +315,6 @@ public class edit_Member extends javax.swing.JPanel {
         jTextField12.setBackground(new java.awt.Color(247, 241, 227));
         jTextField12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jTextField12.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField12.setText("...");
         jTextField12.setBorder(null);
         jTextField12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -435,49 +349,6 @@ public class edit_Member extends javax.swing.JPanel {
 
         jPanel2.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 220, -1, -1));
 
-        jPanel13.setBackground(new java.awt.Color(247, 241, 227));
-
-        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel17.setText("BMI: ");
-
-        jTextField13.setBackground(new java.awt.Color(247, 241, 227));
-        jTextField13.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextField13.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField13.setText("...");
-        jTextField13.setBorder(null);
-        jTextField13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField13ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addComponent(jLabel17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 484, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel17)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        jPanel2.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 390, -1, -1));
-
         jLabel3.setFont(new java.awt.Font("Candara", 1, 24)); // NOI18N
         jLabel3.setText("Edit");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 80, -1, -1));
@@ -486,6 +357,14 @@ public class edit_Member extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(38, 222, 129));
         jLabel1.setText("Member");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 80, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel4.setText("Age:");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 190, -1, -1));
+
+        jTextField2.setBackground(new java.awt.Color(247, 241, 227));
+        jTextField2.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 190, 250, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -501,7 +380,14 @@ public class edit_Member extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
+       edit_user.setUsername(jTextField9.getText());
+       edit_user.setFirstN(jTextField1.getText());
+       edit_user.setUserpass(jTextField3.getText());
+       edit_user.setMail(jTextField8.getText());
+       edit_user.setAge(Integer.parseInt(jTextField2.getText()));
+       edit_user.setWeight(Double.parseDouble(jTextField12.getText()));
+       edit_user.setHeight(Double.parseDouble(jTextField4.getText()));
+       this.setVisible(false);
         admin_allMembers d = new admin_allMembers(f,a);
         f.add(d);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -525,21 +411,9 @@ public class edit_Member extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField8ActionPerformed
 
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
-
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
-
     private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField12ActionPerformed
-
-    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField13ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -548,39 +422,29 @@ public class edit_Member extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JSeparator jSeparator10;
-    private javax.swing.JSeparator jSeparator11;
-    private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator13;
-    private javax.swing.JSeparator jSeparator14;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField8;
