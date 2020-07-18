@@ -32,7 +32,7 @@ public class admin_allMembers extends javax.swing.JPanel {
     }
     public void addrow(){
         DefaultTableModel m= (DefaultTableModel)jTable2.getModel();
-        Object rowdata[] =new Object[9];
+        Object rowdata[] =new Object[10];
         Vector<user> temp;
         temp= admin.getUsers();
         for(int i=0;i<temp.size();i++)
@@ -46,6 +46,7 @@ public class admin_allMembers extends javax.swing.JPanel {
             rowdata[6]=temp.elementAt(i).getWeight();
             rowdata[7]=temp.elementAt(i).getGender();
             rowdata[8]=temp.elementAt(i).getPid();
+            rowdata[9]=temp.elementAt(i).getUserpass();
             m.addRow(rowdata);
         }
     }
@@ -89,7 +90,7 @@ public class admin_allMembers extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "Username", "Name", "E-mail", "Age", "Height", "Weight", "Gender", "Phy_id"
+                "ID", "Username", "Name", "E-mail", "Age", "Height", "Weight", "Gender", "Phy_id", "pass"
             }
         ));
         jTable2.setGridColor(new java.awt.Color(247, 241, 227));
@@ -266,8 +267,11 @@ public class admin_allMembers extends javax.swing.JPanel {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
+          DefaultTableModel model=(DefaultTableModel)jTable2.getModel();
+         int index=jTable2.getSelectedRow();
+          String upass=(String) model.getValueAt(index,9);
                         this.setVisible(false);
-        edit_Member e = new edit_Member(f,a);
+        edit_Member e = new edit_Member(f,a,upass);
         f.add(e);
     }//GEN-LAST:event_jButton6ActionPerformed
 

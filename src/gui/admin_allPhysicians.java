@@ -33,7 +33,7 @@ public class admin_allPhysicians extends javax.swing.JPanel {
     }
       public void addrow(){
         DefaultTableModel m= (DefaultTableModel)jTable2.getModel();
-        Object rowdata[] =new Object[7];
+        Object rowdata[] =new Object[8];
         Vector<physician> temp;
         temp= admin.getPhys();
         for(int i=0;i<temp.size();i++)
@@ -45,6 +45,7 @@ public class admin_allPhysicians extends javax.swing.JPanel {
             rowdata[4]=temp.elementAt(i).getAge();
             rowdata[5]=temp.elementAt(i).getNumpatients();
             rowdata[6]=temp.elementAt(i).getSalary();
+            rowdata[7]=temp.elementAt(i).getUserpass();
             m.addRow(rowdata);
         }
     }
@@ -87,7 +88,7 @@ public class admin_allPhysicians extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "Name", "username", "email", "age", "#patients", "salary"
+                "ID", "Name", "username", "email", "age", "#patients", "salary", "pass"
             }
         ));
         jTable2.setGridColor(new java.awt.Color(247, 241, 227));
@@ -282,13 +283,15 @@ public class admin_allPhysicians extends javax.swing.JPanel {
          int index=jTable2.getSelectedRow();
           String id=(String) model.getValueAt(index, 0);
         new Remove(null, true,f,a,id).setVisible(true);
-        
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel model=(DefaultTableModel)jTable2.getModel();
+         int index=jTable2.getSelectedRow();
+          String pass=(String) model.getValueAt(index, 7);
         this.setVisible(false);
-        edit_Physician e = new edit_Physician(f,a);
+        edit_Physician e = new edit_Physician(f,a,pass);
         f.add(e);
     }//GEN-LAST:event_jButton6ActionPerformed
 
