@@ -110,20 +110,11 @@ public class Remove extends javax.swing.JDialog {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        if(a.isfound(id,"user"))
-        {
-           a.removeUser(id);
-           this.dispose();
-           admin_allMembers m = new admin_allMembers(f,a);
-           f.add(m);
-        }
-        if(a.isfound(id,"phys"))
-        {
-            a.removePhysician(id);
-           this.dispose();
-           admin_allPhysicians m = new admin_allPhysicians(f,a);
-           f.add(m);
-        }
+        a.removeUser(id);
+        a.removePhysician(id);
+        this.dispose();
+        admin_allMembers m = new admin_allMembers(f,a);
+        f.add(m);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
