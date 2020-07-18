@@ -149,6 +149,10 @@ public class user extends person implements Serializable {
       bmi=(weight/h)*10000;
         
     }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
     
     public String getUsername() {
         return username;

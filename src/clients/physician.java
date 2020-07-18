@@ -74,6 +74,10 @@ public class physician extends person {
         return id;
     }
 
+    public void setUname(String uname) {
+        this.uname = uname;
+    }
+
     public void setId(String id) {
         this.id = id;
     }
