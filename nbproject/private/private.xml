@@ -3,15 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/games/test/JavaApplication1/src/dataBase/meal.java</file>
-            <file>file:/E:/games/test/JavaApplication1/src/javaapplication1/JavaApplication1.java</file>
-            <file>file:/E:/games/test/JavaApplication1/src/dataBase/readBaseData.java</file>
-            <file>file:/E:/games/test/JavaApplication1/src/dataBase/GainWeight.java</file>
-            <file>file:/E:/games/test/JavaApplication1/src/dataBase/LoseWeight.java</file>
-            <file>file:/E:/games/test/JavaApplication1/src/dataBase/FoodRecommendation.java</file>
-            <file>file:/E:/games/test/JavaApplication1/src/dataBase/ExercisePlan.java</file>
-            <file>file:/E:/games/test/JavaApplication1/src/dataBase/WritingData.java</file>
-            <file>file:/E:/games/test/JavaApplication1/src/dataBase/Manipulation.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/july/fitterBetter/src/gui/Analysis.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/july/fitterBetter/src/dataBase/LoseWeight.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/july/fitterBetter/src/gui/Member_Home.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/july/fitterBetter/src/clients/user.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/july/fitterBetter/src/gui/Signup_Member.java</file>
         </group>
     </open-files>
 </project-private>

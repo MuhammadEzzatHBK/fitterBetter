@@ -48,7 +48,7 @@ public class LoseWeight extends FoodRecommendation {
     }
     
     @Override
-    public ArrayList<String>  RecommendBreakFast(ArrayList<meal> CleanedData)
+    public ArrayList<String>  RecommendBreakFast()
     {
        SetBreakFast(CleanedData);
        
@@ -61,7 +61,7 @@ public class LoseWeight extends FoodRecommendation {
            }
        });
        
-       for(int i = 0 ; i < 15 ; i++)
+       for(int i = 0 ; i < 16 ; i++)
        {
            BreakFastArray.add(CleanedData.get(i).getPortion_amount() + "\t" + CleanedData.get(i).getPortion_name() + CleanedData.get(i).getName())  ;
        }
@@ -70,7 +70,7 @@ public class LoseWeight extends FoodRecommendation {
     }
     
     @Override
-    public ArrayList<String>  RecommendLunch(ArrayList<meal> CleanedData)
+    public ArrayList<String>  RecommendLunch()
     {
        SetLunch(CleanedData);
        
@@ -83,7 +83,7 @@ public class LoseWeight extends FoodRecommendation {
            }
        });
        
-       for(int i = 0 ; i < 15 ; i++)
+       for(int i = 0 ; i < 16 ; i++)
        {
            LunchArray.add(CleanedData.get(i).getPortion_amount() + "\t" + CleanedData.get(i).getPortion_name() + CleanedData.get(i).getName())  ;
        }
@@ -91,7 +91,7 @@ public class LoseWeight extends FoodRecommendation {
        return LunchArray;
     }
     @Override
-    public ArrayList<String>  RecommendDinner(ArrayList<meal> CleanedData)
+    public ArrayList<String>  RecommendDinner()
     {
        SetDinner(CleanedData);
        
@@ -104,7 +104,7 @@ public class LoseWeight extends FoodRecommendation {
            }
        });
        
-       for(int i = 0 ; i < 15 ; i++)
+       for(int i = 0 ; i < 16 ; i++)
        {
            DinnerArray.add(CleanedData.get(i).getPortion_amount() + "\t" + CleanedData.get(i).getPortion_name() + CleanedData.get(i).getName())  ;
        }

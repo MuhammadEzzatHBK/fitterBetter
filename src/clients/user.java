@@ -4,16 +4,17 @@
  * and open the template in the editor.
  */
 package clients;
+import dataBase.FoodRecommendation;
+import dataBase.GainWeight;
+import dataBase.LoseWeight;
 import java.util.*;
 import java.io.Serializable;
-import java.util.logging.Logger;
 /**
  *
  * @author lenovo
  */
 public class user extends person implements Serializable {
     private String id, pid, state,username,gender;
-
     static int userno = 0;
     private int age;
     private double weight, height, bmi,goalM;
@@ -22,13 +23,13 @@ public class user extends person implements Serializable {
     private ArrayList<String> track=new ArrayList<String>();
     private boolean active = false;
     private chat currentchat;
-    private ArrayList<String> breakfast;
-    private ArrayList<String> lunch;
-    private ArrayList<String> dinner;
     private double requiredWater;
     private double actualWater;
     private static final long serialVersionUID = 1L;
-  
+    private int weekNo = 0;
+    
+    private FoodRecommendation foodPlan = null;
+    
     public user(String firstN, String lastN,String username, String userpass, String mail, int age , double weight , double height ){
       super(firstN, lastN,userpass, mail );
       this.age = age;
@@ -43,26 +44,27 @@ public class user extends person implements Serializable {
       setGoalT();
       setGoalM();
       setState();
- 
+      
+    if (goalT == -1 )
+        foodPlan =new GainWeight();
+    else 
+        foodPlan =new LoseWeight();
+
      }
      
-    public void water_Drink(double amount)
-    {
+    /******************************************************************** WATER PLAN*/
+    public void water_Drink(double amount)    {
         actualWater += amount;
         incXp((int) (amount * 100));
     }
-    public double water_Compare()
-    {
+    public double water_Compare(){
         return (actualWater/requiredWater)*100;
     }
-    public double water_exercise()
-    {
+    public double water_exercise(){
         incXp(100);
          return requiredWater += 0.35;
          
     }
-    
-    
     public double getRequiredWater(boolean newDay) {
         if (newDay == true)
         {    actualWater = 0;
@@ -71,13 +73,26 @@ public class user extends person implements Serializable {
             
             return requiredWater;
     }
-
     public double getActualWater() {
         return actualWater;
     }
+
+    /********************************************************************* EATING PLAN*/
+    public int getWeekNo() {
+        return weekNo;
+    }
     
-     public void getchat(Vector<chat> Allchats)
-     {
+    public void incWeekNo() {
+        weekNo++;
+    }
+
+    public FoodRecommendation getFoodPlan() {
+        return foodPlan;
+    }
+    
+    
+    
+     public void getchat(Vector<chat> Allchats){
          for(int i=0;i<Allchats.size();i++)
          {
             if(Allchats.get(i).id.equals(id))

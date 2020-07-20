@@ -272,7 +272,7 @@ public class Signup_Member extends javax.swing.JPanel {
         jTextField4.setBackground(new java.awt.Color(247, 241, 227));
         jTextField4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jTextField4.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField4.setText("...");
+        jTextField4.setText("160");
         jTextField4.setBorder(null);
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -298,14 +298,25 @@ public class Signup_Member extends javax.swing.JPanel {
         jTextField5.setBackground(new java.awt.Color(247, 241, 227));
         jTextField5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jTextField5.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField5.setText("20");
         jTextField5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 302, 460, 50));
 
         jTextField6.setBackground(new java.awt.Color(247, 241, 227));
         jTextField6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jTextField6.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField6.setText(" ");
+        jTextField6.setText("70");
         jTextField6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 382, 390, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -368,6 +379,14 @@ public class Signup_Member extends javax.swing.JPanel {
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

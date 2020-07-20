@@ -52,7 +52,7 @@ public class GainWeight extends FoodRecommendation {
     
     @Override
     // takes the ArrayList and return arraylist of strings contains breakfast meals name
-    public ArrayList<String>  RecommendBreakFast(ArrayList<meal> CleanedData)
+    public ArrayList<String>  RecommendBreakFast()
     {
        SetBreakFast(CleanedData);
        //sort the arraylist in descinding order of the breakfast score
@@ -64,8 +64,8 @@ public class GainWeight extends FoodRecommendation {
                return Double.valueOf(m2.getBreakFastScore()).compareTo(m1.getBreakFastScore());
            }
        });
-       // takes the higher 15 score of breakfast and puts their names in array
-       for(int i = 0 ; i < 15 ; i++)
+       // takes the higher 16 score of breakfast and puts their names in array
+       for(int i = 0 ; i < 16 ; i++)
        {
            BreakFastArray.add(CleanedData.get(i).getPortion_amount() + "\t" + CleanedData.get(i).getPortion_name() + CleanedData.get(i).getName())  ;
        }
@@ -75,7 +75,7 @@ public class GainWeight extends FoodRecommendation {
     
     @Override
     // takes the ArrayList and return arraylist of strings contains lunch meals name
-    public ArrayList<String>  RecommendLunch(ArrayList<meal> CleanedData)
+    public ArrayList<String>  RecommendLunch()
     {
        SetLunch(CleanedData);
         //sort the arraylist in descinding order of the lunch score
@@ -87,8 +87,8 @@ public class GainWeight extends FoodRecommendation {
                return Double.valueOf(m2.getLunchScore()).compareTo(m1.getLunchScore());
            }
        });
-       // takes the higher 15 score of lunch and puts their names in array
-       for(int i = 0 ; i < 15 ; i++)
+       // takes the higher 16 score of lunch and puts their names in array
+       for(int i = 0 ; i < 16 ; i++)
        {
            LunchArray.add(CleanedData.get(i).getPortion_amount() + "\t" + CleanedData.get(i).getPortion_name() + CleanedData.get(i).getName())  ;
        }
@@ -97,7 +97,7 @@ public class GainWeight extends FoodRecommendation {
     }
     @Override
     // takes the ArrayList and return arraylist of strings contains dinner meals name
-    public ArrayList<String>  RecommendDinner(ArrayList<meal> CleanedData)
+    public ArrayList<String>  RecommendDinner()
     {
        SetDinner(CleanedData);
        //sort the arraylist in descinding order of the dinner score
@@ -109,8 +109,8 @@ public class GainWeight extends FoodRecommendation {
                return Double.valueOf(m2.getDinnerScore()).compareTo(m1.getDinnerScore());
            }
        });
-        // takes the higher 15 score of dinner and puts their names in array
-       for(int i = 0 ; i < 15 ; i++)
+        // takes the higher 16 score of dinner and puts their names in array
+       for(int i = 0 ; i < 16 ; i++)
        {
            DinnerArray.add(CleanedData.get(i).getPortion_amount() + "\t" + CleanedData.get(i).getPortion_name() + CleanedData.get(i).getName())  ;
        }
