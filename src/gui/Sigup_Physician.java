@@ -105,6 +105,11 @@ public class Sigup_Physician extends javax.swing.JPanel {
         jLabel7.setText("Password");
 
         jPasswordField1.setBackground(new java.awt.Color(247, 241, 227));
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
 
         jPanel3.setBackground(new java.awt.Color(247, 241, 227));
 
@@ -334,6 +339,10 @@ public class Sigup_Physician extends javax.swing.JPanel {
                  f.add(d);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

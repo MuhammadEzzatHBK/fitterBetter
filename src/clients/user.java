@@ -14,6 +14,8 @@ import java.io.Serializable;
  * @author lenovo
  */
 public class user extends person implements Serializable {
+    
+    /** Data Members*/
     private String id, pid, state,username,gender;
     static int userno = 0;
     private int age;
@@ -26,8 +28,7 @@ public class user extends person implements Serializable {
     private double requiredWater;
     private double actualWater;
     private static final long serialVersionUID = 1L;
-    private int weekNo = 0;
-    
+    private int weekNo = 0;    
     private FoodRecommendation foodPlan = null;
     
     public user(String firstN, String lastN,String username, String userpass, String mail, int age , double weight , double height ){
@@ -52,7 +53,7 @@ public class user extends person implements Serializable {
 
      }
      
-    /******************************************************************** WATER PLAN*/
+    /** WATER PLAN*/
     public void water_Drink(double amount)    {
         actualWater += amount;
         incXp((int) (amount * 100));
@@ -76,70 +77,59 @@ public class user extends person implements Serializable {
     public double getActualWater() {
         return actualWater;
     }
+    public void setActualWater(double actualWater) {
+        this.actualWater = actualWater;
+    }  
 
-    /********************************************************************* EATING PLAN*/
+    /** EATING PLAN*/
     public int getWeekNo() {
         return weekNo;
     }
-    
     public void incWeekNo() {
         weekNo++;
     }
-
     public FoodRecommendation getFoodPlan() {
         return foodPlan;
     }
     
-    
-    
-     public void getchat(Vector<chat> Allchats){
+    /** Chatting*/
+    public void getchat(Vector<chat> Allchats){
          for(int i=0;i<Allchats.size();i++)
          {
             if(Allchats.get(i).id.equals(id))
                 currentchat=Allchats.get(i);
          }
      }
-
     public chat getCurrentchat() {
         return currentchat;
     }
     
+    
+    /** Getters and setters*/
     public String getId() {
         return id;
     }
-
     public void setId(String id) {
         this.id = id;
     }
-
     public String getPid() {
         return pid;
     }
-
     public void setPid(String pid) {
         this.pid = pid;
     }
-
     public static int getUserno() {
         return userno;
     }
-
     public static void setUserno(int userno) {
         user.userno = userno;
     }
-
     public int getAge() {
         return age;
     }
-
     public void setAge(int age) {
         this.age = age;
     }
-
-    public void setActualWater(double actualWater) {
-        this.actualWater = actualWater;
-    }
-    
     public void setWeight(double weight) {
         this.weight = weight;
        track.add(String.valueOf(weight));
@@ -150,37 +140,29 @@ public class user extends person implements Serializable {
     public double getHeight() {
         return height;
     }
-
     public void setHeight(double height) {
         this.height = height;
     }
-
     public double getBmi() {
         return bmi;
     }
-
     public void setBmi() {
        double h=(height*height);
       bmi=(weight/h)*10000;
         
     }
-
     public void setUsername(String username) {
         this.username = username;
     }
-    
     public String getUsername() {
         return username;
     }
-
     public double getWeight() {
         return weight;
     }
-
     public double getGoalM() {
         return goalM;
     }
-
     public void setGoalM() {
       double temp;
       double h=(height*height);
@@ -190,11 +172,9 @@ public class user extends person implements Serializable {
        else temp=25-bmi;
        goalM=(temp/10000)*h;
     }
-
     public int getGoalT() {
         return goalT;
     }
-
     public void setGoalT() {
         if(bmi > 25)
             goalT = 1;
@@ -220,7 +200,6 @@ public class user extends person implements Serializable {
     public int getXp() {
         return xp;
     }
-
     public void incXp(int x) {
         xp  += x;
     }
@@ -238,8 +217,7 @@ public class user extends person implements Serializable {
             state = "Obese";
         else
             state = "Severely obese";
-    }
-    
+    } 
     public ArrayList<String> getTrack(){
         return track;
     }

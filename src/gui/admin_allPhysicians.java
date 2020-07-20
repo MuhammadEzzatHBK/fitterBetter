@@ -172,7 +172,7 @@ public class admin_allPhysicians extends javax.swing.JPanel {
 
         jButton10.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/photos/blue.png"))); // NOI18N
-        jButton10.setText("Log Out");
+        jButton10.setText("Mail");
         jButton10.setActionCommand("physician");
         jButton10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton10.setMaximumSize(new java.awt.Dimension(110, 40));
@@ -298,8 +298,8 @@ public class admin_allPhysicians extends javax.swing.JPanel {
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        log_out a = new log_out();
-        f.add(a);
+        mail e = new mail(f,a,false);
+        f.add(e);
     }//GEN-LAST:event_jButton10ActionPerformed
 
 

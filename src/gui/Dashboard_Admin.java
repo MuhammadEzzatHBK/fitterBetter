@@ -26,6 +26,8 @@ public class Dashboard_Admin extends javax.swing.JPanel {
         this.f = f;
         this.a=a;
         jLabel2.setText(a.getFirstN());
+        jLabel5.setText(String.valueOf(a.getUsers().size()));
+        jLabel8.setText(String.valueOf(a.getPhys().size()));
     }
 
    

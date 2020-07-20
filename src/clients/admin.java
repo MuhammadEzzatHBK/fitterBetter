@@ -49,11 +49,9 @@ public class admin extends person {
     public static int getAdminno() {
         return adminno;
     }
-
     public static void setAdminno(int adminno) {
         admin.adminno = adminno;
     }
-   
     public boolean addUser(user X){
        users.add(X);
        int min = phys.elementAt(0).getPatients().size();
@@ -193,7 +191,6 @@ public class admin extends person {
         }   
         return "Username doesn't exist !";
     }
-      
    public static Object getbyPassword(String password, String orin){
         if(orin.equals("user")){
             for(int i=0;i<users.size();i++)
@@ -209,7 +206,7 @@ public class admin extends person {
         return "Password doesn't exist";
     
     }
-    
+   
     public  void sendMail(String Title, String Msg,  boolean toUsers)
     {
         final String username = "betterfitter.program@gmail.com";
@@ -254,8 +251,6 @@ public class admin extends person {
             
             message.setText(Msg);
             
-            //String htmlCode = "<h2>Weekly Progress<h2/>"
-            //        + "<h5>Keep Up the good work<h5/>";
             //message.setContent(htmlCode, "text/html");
 
             Transport.send(message);
