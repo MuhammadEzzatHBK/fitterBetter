@@ -75,7 +75,7 @@ public class Dashboard_Admin extends javax.swing.JPanel {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/photos/member_icon_mini.png"))); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Candara", 1, 120)); // NOI18N
-        jLabel5.setText("47");
+        jLabel5.setText("lable");
 
         jLabel6.setFont(new java.awt.Font("Candara", 1, 40)); // NOI18N
         jLabel6.setText("Members");
@@ -109,8 +109,10 @@ public class Dashboard_Admin extends javax.swing.JPanel {
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addComponent(jLabel6)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(11, 11, 11)))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -136,7 +138,7 @@ public class Dashboard_Admin extends javax.swing.JPanel {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/photos/Physician_icon.png"))); // NOI18N
 
         jLabel8.setFont(new java.awt.Font("Candara", 1, 120)); // NOI18N
-        jLabel8.setText("21");
+        jLabel8.setText("lable");
 
         jLabel9.setFont(new java.awt.Font("Candara", 1, 40)); // NOI18N
         jLabel9.setText("Physicians");
@@ -171,7 +173,7 @@ public class Dashboard_Admin extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(25, 25, 25))))
         );
         jPanel3Layout.setVerticalGroup(

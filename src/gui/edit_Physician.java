@@ -29,7 +29,8 @@ public class edit_Physician extends javax.swing.JPanel {
         this.a=a;
         edit_phy=(physician)a.getbyPassword(pass,"phys");
         jTextField9.setText(edit_phy.getUname());
-        jTextField1.setText(edit_phy.getFirstN());
+        jTextField4.setText(edit_phy.getFirstN());
+        jTextField1.setText(edit_phy.getLastN());
         jTextField3.setText(pass);
         jTextField8.setText(edit_phy.getMail());
         jTextField2.setText(String.valueOf(edit_phy.getAge()));
@@ -68,11 +69,13 @@ public class edit_Physician extends javax.swing.JPanel {
         jSeparator10 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel12 = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
         jSeparator13 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
 
         jTextField10.setBackground(new java.awt.Color(247, 241, 227));
         jTextField10.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -118,7 +121,7 @@ public class edit_Physician extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(247, 241, 227));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel6.setText("Name");
+        jLabel6.setText("Last Name");
 
         jTextField1.setBackground(new java.awt.Color(247, 241, 227));
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -153,7 +156,7 @@ public class edit_Physician extends javax.swing.JPanel {
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, -1));
+        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(247, 241, 227));
 
@@ -188,7 +191,7 @@ public class edit_Physician extends javax.swing.JPanel {
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, -1, -1));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
 
         jPanel8.setBackground(new java.awt.Color(247, 241, 227));
 
@@ -228,7 +231,7 @@ public class edit_Physician extends javax.swing.JPanel {
                 .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, -1, -1));
+        jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 310, -1, -1));
 
         jPanel9.setBackground(new java.awt.Color(247, 241, 227));
 
@@ -273,39 +276,55 @@ public class edit_Physician extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(43, 203, 186));
         jLabel1.setText("Physician");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 80, -1, -1));
-
-        jPanel12.setBackground(new java.awt.Color(247, 241, 227));
-
-        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel16.setText("Members:");
-
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel16)
-                .addContainerGap(501, Short.MAX_VALUE))
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel16)
-                .addGap(33, 33, 33))
-        );
-
-        jPanel2.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 220, -1, -1));
         jPanel2.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 450, 548, 16));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel4.setText("Age:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 170, -1, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 260, -1, -1));
 
         jTextField2.setBackground(new java.awt.Color(247, 241, 227));
         jTextField2.setForeground(new java.awt.Color(153, 153, 153));
-        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 180, 250, -1));
+        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 270, 250, -1));
+
+        jPanel4.setBackground(new java.awt.Color(247, 241, 227));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel8.setText("First Name");
+
+        jTextField4.setBackground(new java.awt.Color(247, 241, 227));
+        jTextField4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jTextField4.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField4.setBorder(null);
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -322,7 +341,8 @@ public class edit_Physician extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
        edit_phy.setUname(jTextField9.getText());
-       edit_phy.setFirstN(jTextField1.getText());
+       edit_phy.setFirstN(jTextField4.getText());
+       edit_phy.setLastN(jTextField1.getText());
        edit_phy.setUserpass(jTextField3.getText());
        edit_phy.setMail(jTextField8.getText());
        edit_phy.setAge(Integer.parseInt(jTextField2.getText()));
@@ -351,6 +371,10 @@ public class edit_Physician extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField10ActionPerformed
 
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -358,27 +382,29 @@ public class edit_Physician extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator13;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables

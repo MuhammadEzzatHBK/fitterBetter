@@ -8,6 +8,7 @@ package gui;
 import clients.admin;
 import clients.user;
 import java.util.Vector;
+import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 
@@ -21,12 +22,17 @@ public class Signup_Member extends javax.swing.JPanel {
      * Creates new form Signup_Member
      */
     general_login f;
+    ButtonGroup B;
     public Signup_Member() {
         initComponents();
     }
     public Signup_Member(general_login f) {
         initComponents();
         this.f = f;
+        B=new ButtonGroup();
+        B.add(jRadioButton1);
+        B.add(jRadioButton2);
+        jRadioButton1.setSelected(true);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -69,6 +75,14 @@ public class Signup_Member extends javax.swing.JPanel {
         jLabel14 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel5 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
 
         jPanel2.setBackground(new java.awt.Color(247, 241, 227));
         jPanel2.setForeground(new java.awt.Color(247, 241, 227));
@@ -84,7 +98,7 @@ public class Signup_Member extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 560, 550, 100));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 560, 550, 100));
 
         jButton2.setBackground(new java.awt.Color(247, 241, 227));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/photos/back_arrow_1.png"))); // NOI18N
@@ -95,7 +109,7 @@ public class Signup_Member extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1301, 0, -1, -1));
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 20, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/photos/login_header_24.png"))); // NOI18N
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, -1, -1));
@@ -103,7 +117,7 @@ public class Signup_Member extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(247, 241, 227));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel6.setText("Name");
+        jLabel6.setText("First Name");
 
         jTextField1.setBackground(new java.awt.Color(247, 241, 227));
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -139,7 +153,7 @@ public class Signup_Member extends javax.swing.JPanel {
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, -1));
+        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, -1, 120));
 
         jPanel3.setBackground(new java.awt.Color(247, 241, 227));
 
@@ -153,14 +167,14 @@ public class Signup_Member extends javax.swing.JPanel {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField3)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(jLabel7)
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 12, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -168,13 +182,13 @@ public class Signup_Member extends javax.swing.JPanel {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel7)
-                .addGap(13, 13, 13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, -1, -1));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, -1, -1));
 
         jPanel8.setBackground(new java.awt.Color(247, 241, 227));
 
@@ -199,23 +213,26 @@ public class Signup_Member extends javax.swing.JPanel {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12)
                     .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, -1, -1));
+        jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 150, -1, 120));
 
         jPanel9.setBackground(new java.awt.Color(247, 241, 227));
 
@@ -267,7 +284,7 @@ public class Signup_Member extends javax.swing.JPanel {
         jTextField2.setText(" ");
         jTextField2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 110, 319, 29));
-        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 520, 548, 16));
+        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 430, 548, 16));
 
         jTextField4.setBackground(new java.awt.Color(247, 241, 227));
         jTextField4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -279,21 +296,21 @@ public class Signup_Member extends javax.swing.JPanel {
                 jTextField4ActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 460, 484, 49));
+        jPanel2.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 380, 484, 49));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel8.setText("Height: ");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 480, -1, -1));
-        jPanel2.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 440, 548, 16));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 390, -1, -1));
+        jPanel2.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 370, 548, 16));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel16.setText("Weight: ");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 390, -1, -1));
-        jPanel2.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 360, 548, 16));
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 330, -1, -1));
+        jPanel2.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 310, 548, 16));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel14.setText("Age: ");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 310, -1, -1));
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 270, -1, -1));
 
         jTextField5.setBackground(new java.awt.Color(247, 241, 227));
         jTextField5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -305,7 +322,7 @@ public class Signup_Member extends javax.swing.JPanel {
                 jTextField5ActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 302, 460, 50));
+        jPanel2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 260, 460, 50));
 
         jTextField6.setBackground(new java.awt.Color(247, 241, 227));
         jTextField6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -317,20 +334,72 @@ public class Signup_Member extends javax.swing.JPanel {
                 jTextField6ActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 382, 390, 40));
+        jPanel2.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 330, 390, 40));
+
+        jPanel4.setBackground(new java.awt.Color(247, 241, 227));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel4.setText("Last Name");
+
+        jTextField7.setBackground(new java.awt.Color(247, 241, 227));
+        jTextField7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jTextField7.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField7.setText("Enter LastName");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 95, Short.MAX_VALUE))
+            .addComponent(jSeparator5)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 550, 120));
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 330, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel5.setText("Gender");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 440, -1, -1));
+
+        jRadioButton1.setBackground(new java.awt.Color(247, 241, 227));
+        jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jRadioButton1.setText("Female");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 480, -1, -1));
+
+        jRadioButton2.setBackground(new java.awt.Color(247, 241, 227));
+        jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jRadioButton2.setText("Male");
+        jPanel2.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 480, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -352,20 +421,28 @@ public class Signup_Member extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+        String gender=" ";
         String uname= jTextField9.getText();
         String fname= jTextField1.getText();
+         String lname= jTextField7.getText();
         String pass= jTextField3.getText();
         String mail= jTextField8.getText();
         int age=Integer.parseInt(jTextField5.getText());
         double weight=Double.parseDouble(jTextField6.getText());
         double height=Double.parseDouble(jTextField4.getText());
-        if(admin.isreserved(pass, uname)){
+        if (jRadioButton1.isSelected()){
+            gender="female";
+        }
+        else if(jRadioButton2.isSelected()){
+            gender="male";
+        }
+       Object unametest=admin.getUserbyusername(uname);
+        if(unametest instanceof user){
             JOptionPane.showMessageDialog(this,"username already exist", "Error", ERROR_MESSAGE);
         }  
         else{
                   Vector<user> temp;
-                  user u=new user(fname," ",uname,pass,mail,age,weight ,height);
+                  user u=new user(fname,lname,uname,pass,mail,age,weight,height,gender);
                   temp=admin.getUsers();
                   temp.add(u);
                   this.setVisible(false);
@@ -388,6 +465,10 @@ public class Signup_Member extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField6ActionPerformed
 
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -399,20 +480,27 @@ public class Signup_Member extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator13;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
@@ -420,6 +508,7 @@ public class Signup_Member extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables

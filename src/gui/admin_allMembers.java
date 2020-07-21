@@ -22,8 +22,7 @@ public class admin_allMembers extends javax.swing.JPanel {
     public admin_allMembers() {
         initComponents();
     }
-    public admin_allMembers(general_login f,admin a) {
-        
+    public admin_allMembers(general_login f,admin a){
         initComponents();
         this.f = f;
         this.a=a;
@@ -277,7 +276,7 @@ public class admin_allMembers extends javax.swing.JPanel {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
-        new Search(null, true).show();
+        new Search(null, true,a).show();
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed

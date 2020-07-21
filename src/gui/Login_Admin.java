@@ -28,10 +28,10 @@ public class Login_Admin extends javax.swing.JPanel {
      public Login_Admin(general_login f) {
         initComponents();
         this.f = f;
-        admin a1=new admin("Sara","Ahmed","123","Sara@gmail.com");
-        admin a2=new admin("Sahar","Saber","456","Sahar@gmail.com");
-        admin a3=new admin("Muhammed","Ezzat","789","Ezzat@gmail.com");
-        admin a4=new admin("mohammed","mosaad","100","mosaad@gmail.com");
+        admin a1=new admin("Sara","Ahmed","123","Sara@gmail.com","female");
+        admin a2=new admin("Sahar","Saber","456","Sahar@gmail.com","female");
+        admin a3=new admin("Muhammed","Ezzat","789","Ezzat@gmail.com","male");
+        admin a4=new admin("mohammed","mosaad","100","mosaad@gmail.com","male");
         admins.add(a1);
         admins.add(a2);
         admins.add(a3);

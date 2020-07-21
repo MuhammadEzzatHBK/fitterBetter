@@ -1,6 +1,7 @@
 package gui;
 
 import clients.admin;
+import clients.physician;
 import clients.user;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
@@ -12,6 +13,24 @@ public class general_login extends javax.swing.JFrame {
     general_login f;
     public general_login(){
         initComponents();
+        admin a1=new admin("Sara","Ahmed","123","Sara@gmail.com","female");
+        user u1=new user("maha","ahmed","maha123","145","maha@gmail.com",23,75.5 ,167.5,"female");
+        user u2=new user("mazen","mohammed","mazen12","123","mazen@gmail.com",30,110 ,182.5,"male");
+        physician p1=new physician("omar","ahmed","omar23","123","omar@gmail.com",35,"male");
+        physician p2=new physician("May","ahmed","may","456","may@gmail.com",37,"female");
+        Vector<user> temp1=p1.getPatients();
+            temp1.add(u1);
+            p1.setPatients(temp1);
+              
+        Vector<user> temp2=p2.getPatients();
+           temp2.add(u2);
+           p2.setPatients(temp2);
+           
+        a1.addPhysician(p2);
+        a1.addPhysician(p1);
+        a1.addUser(u1);
+        a1.addUser(u2);
+       
     }
    
     general_login(general_login f) {

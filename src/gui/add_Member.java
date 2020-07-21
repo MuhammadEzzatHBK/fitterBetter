@@ -8,6 +8,7 @@ package gui;
 import clients.admin;
 import clients.user;
 import java.util.Vector;
+import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 
@@ -22,13 +23,18 @@ public class add_Member extends javax.swing.JPanel {
      */
     general_login f;
     admin a;
+    ButtonGroup B;
     public add_Member() {
         initComponents();
     }
-        public add_Member(general_login f,admin a) {
+    public add_Member(general_login f,admin a) {
         initComponents();
         this.f =f;
         this.a=a;
+        B=new ButtonGroup();
+        B.add(jRadioButton1);
+        B.add(jRadioButton2);
+        jRadioButton1.setSelected(true);
     }
 
     /**
@@ -53,9 +59,9 @@ public class add_Member extends javax.swing.JPanel {
         jTextField3 = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         jPanel4 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator13 = new javax.swing.JSeparator();
+        jLabel16 = new javax.swing.JLabel();
+        jTextField12 = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jTextField8 = new javax.swing.JTextField();
@@ -64,14 +70,20 @@ public class add_Member extends javax.swing.JPanel {
         jLabel13 = new javax.swing.JLabel();
         jTextField9 = new javax.swing.JTextField();
         jSeparator10 = new javax.swing.JSeparator();
-        jPanel12 = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
-        jSeparator13 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jSeparator5 = new javax.swing.JSeparator();
+        jLabel5 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
 
         jPanel2.setBackground(new java.awt.Color(247, 241, 227));
         jPanel2.setForeground(new java.awt.Color(247, 241, 227));
@@ -87,7 +99,7 @@ public class add_Member extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 490, 550, 100));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 550, 550, 100));
 
         jButton2.setBackground(new java.awt.Color(247, 241, 227));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/photos/back_arrow_1.png"))); // NOI18N
@@ -106,7 +118,7 @@ public class add_Member extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(247, 241, 227));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel6.setText("Name");
+        jLabel6.setText("Last Name");
 
         jTextField1.setBackground(new java.awt.Color(247, 241, 227));
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -142,7 +154,7 @@ public class add_Member extends javax.swing.JPanel {
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, -1));
+        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(247, 241, 227));
 
@@ -178,20 +190,20 @@ public class add_Member extends javax.swing.JPanel {
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, -1, -1));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, -1, -1));
 
         jPanel4.setBackground(new java.awt.Color(247, 241, 227));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel8.setText("Height: ");
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel16.setText("Weight: ");
 
-        jTextField4.setBackground(new java.awt.Color(247, 241, 227));
-        jTextField4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField4.setBorder(null);
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        jTextField12.setBackground(new java.awt.Color(247, 241, 227));
+        jTextField12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jTextField12.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField12.setBorder(null);
+        jTextField12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                jTextField12ActionPerformed(evt);
             }
         });
 
@@ -201,26 +213,26 @@ public class add_Member extends javax.swing.JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 484, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(48, Short.MAX_VALUE))
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 484, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel16)
+                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 300, -1, -1));
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 315, -1, 80));
 
         jPanel8.setBackground(new java.awt.Color(247, 241, 227));
 
@@ -261,7 +273,7 @@ public class add_Member extends javax.swing.JPanel {
                 .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, -1, -1));
+        jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 130, -1, -1));
 
         jPanel9.setBackground(new java.awt.Color(247, 241, 227));
         jPanel9.setName(""); // NOI18N
@@ -300,48 +312,6 @@ public class add_Member extends javax.swing.JPanel {
 
         jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, -1, -1));
 
-        jPanel12.setBackground(new java.awt.Color(247, 241, 227));
-
-        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel16.setText("Weight: ");
-
-        jTextField12.setBackground(new java.awt.Color(247, 241, 227));
-        jTextField12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextField12.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField12.setBorder(null);
-        jTextField12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField12ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel12Layout.createSequentialGroup()
-                        .addComponent(jLabel16)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 484, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        jPanel2.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 220, -1, -1));
-
         jLabel3.setFont(new java.awt.Font("Candara", 1, 24)); // NOI18N
         jLabel3.setText("Add");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 80, -1, -1));
@@ -353,12 +323,83 @@ public class add_Member extends javax.swing.JPanel {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel4.setText("Age:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 180, -1, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 270, -1, -1));
 
         jTextField2.setBackground(new java.awt.Color(247, 241, 227));
         jTextField2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jTextField2.setForeground(new java.awt.Color(153, 153, 153));
-        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 180, 470, -1));
+        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 270, 470, -1));
+        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 450, 548, 16));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel8.setText("Height: ");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 400, -1, -1));
+
+        jTextField4.setBackground(new java.awt.Color(247, 241, 227));
+        jTextField4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jTextField4.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField4.setBorder(null);
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 390, 484, 49));
+
+        jPanel5.setBackground(new java.awt.Color(247, 241, 227));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel9.setText("First Name");
+
+        jTextField5.setBackground(new java.awt.Color(247, 241, 227));
+        jTextField5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jTextField5.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField5.setText("Enter Name");
+        jTextField5.setBorder(null);
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel5.setText("Gender");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 470, -1, -1));
+
+        jRadioButton1.setBackground(new java.awt.Color(247, 241, 227));
+        jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jRadioButton1.setText("Female");
+        jPanel2.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 510, -1, -1));
+
+        jRadioButton2.setBackground(new java.awt.Color(247, 241, 227));
+        jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jRadioButton2.setText("Male");
+        jPanel2.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 510, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -375,20 +416,27 @@ public class add_Member extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
        
-        
-         String uname= jTextField9.getText();
-        String fname= jTextField1.getText();
+        String gender=" ";
+        String uname= jTextField9.getText();
+        String lname= jTextField1.getText();
+        String fname= jTextField5.getText();
         String pass= jTextField3.getText();
         String mail= jTextField8.getText();
         int age=Integer.parseInt(jTextField2.getText());
         double weight=Double.parseDouble(jTextField12.getText());
         double height=Double.parseDouble(jTextField4.getText());
+        if (jRadioButton1.isSelected()){
+            gender="female";
+        }
+        else if(jRadioButton2.isSelected()){
+            gender="male";
+        }
        if(admin.isreserved(pass, uname)){
             JOptionPane.showMessageDialog(this,"username already exist", "Error", ERROR_MESSAGE);
         }  
         else{
                   Vector<user> temp;
-                  user u=new user(fname," ",uname,pass,mail,age,weight ,height );
+                  user u=new user(fname,lname,uname,pass,mail,age,weight ,height,gender);
                   temp=admin.getUsers();
                   temp.add(u);
                   this.setVisible(false);
@@ -423,6 +471,10 @@ public class add_Member extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField12ActionPerformed
 
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -434,27 +486,33 @@ public class add_Member extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator13;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
