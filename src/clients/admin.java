@@ -18,10 +18,8 @@ public class admin extends person {
     private static int adminno = 0;
     private static Vector<chat> u_phchats;
             
-  public  admin(String firstN, String lastN, String userpass, String mail){
-      super(firstN, lastN,userpass, mail );
-       
- 
+  public  admin(String firstN, String lastN, String userpass, String mail,String gender){
+      super(firstN,lastN,userpass,mail,gender);
       adminno++;
       id = new String("A"+adminno);
     }
@@ -186,7 +184,7 @@ public class admin extends person {
     }
      public static Object getUserbyusername(String username){
         for(int i =0; i<users.size();i++){
-            if(users.elementAt(i).getUserpass().contains(username))
+            if(users.elementAt(i).getUsername().contains(username))
                 return users.elementAt(i);
         }   
         return "Username doesn't exist !";

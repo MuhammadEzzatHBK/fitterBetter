@@ -14,12 +14,14 @@ public abstract class person {
     private String lastN;
     private String userpass;
     private String mail;
+    private String gender;
     
-    person(String firstN, String lastN, String userpass, String mail ){
+    person(String firstN, String lastN, String userpass, String mail ,String gender ){
         this.firstN = firstN;
         this.lastN = lastN;
         this.userpass = userpass;
         this.mail = mail;
+        this.gender=gender;
     }
 
     public String getFirstN() {
@@ -52,6 +54,14 @@ public abstract class person {
 
     public void setMail(String mail) {
         this.mail = mail;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
     
 }

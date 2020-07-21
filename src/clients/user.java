@@ -16,7 +16,7 @@ import java.io.Serializable;
 public class user extends person implements Serializable {
     
     /** Data Members*/
-    private String id, pid, state,username,gender;
+    private String id, pid, state,username;
     static int userno = 0;
     private int age;
     private double weight, height, bmi,goalM;
@@ -31,8 +31,8 @@ public class user extends person implements Serializable {
     private int weekNo = 0;    
     private FoodRecommendation foodPlan = null;
     
-    public user(String firstN, String lastN,String username, String userpass, String mail, int age , double weight , double height ){
-      super(firstN, lastN,userpass, mail );
+    public user(String firstN,String lastN,String username,String userpass,String mail,int age,double weight,double height,String gender){
+      super(firstN,lastN,userpass,mail,gender);
       this.age = age;
       this.weight = weight;
       this.height = height;
@@ -133,10 +133,7 @@ public class user extends person implements Serializable {
     public void setWeight(double weight) {
         this.weight = weight;
        track.add(String.valueOf(weight));
-    }
-    public String getGender() {
-        return gender;
-    }
+    }    
     public double getHeight() {
         return height;
     }
@@ -221,11 +218,8 @@ public class user extends person implements Serializable {
     public ArrayList<String> getTrack(){
         return track;
     }
-    public void activate(){active = true;}
-
+    public void activate(){active = true;}   
    
-    
-    
 }
 
 

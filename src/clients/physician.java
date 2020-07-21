@@ -22,8 +22,8 @@ public class physician extends person {
     chat currentchat;
     
     
-    public physician(String firstN, String lastN,String uname, String userpass, String mail,int age){
-      super(firstN, lastN,userpass, mail );
+    public physician(String firstN, String lastN,String uname, String userpass, String mail,int age,String gender){
+      super(firstN,lastN,userpass,mail,gender);
       physno ++;
       id = new String("P"+physno);
       salary = baseSalary;
