@@ -21,11 +21,11 @@ public class general_login extends javax.swing.JFrame {
         Vector<user> temp1=p1.getPatients();
             temp1.add(u1);
             p1.setPatients(temp1);
-              
+            u1.setPid(p1.getId());
         Vector<user> temp2=p2.getPatients();
            temp2.add(u2);
            p2.setPatients(temp2);
-           
+           u2.setPid(p2.getId());
         a1.addPhysician(p2);
         a1.addPhysician(p1);
         a1.addUser(u1);

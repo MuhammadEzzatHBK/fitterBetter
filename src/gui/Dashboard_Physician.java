@@ -8,6 +8,8 @@ package gui;
 import clients.physician;
 import clients.user;
 import java.util.Vector;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -35,6 +37,7 @@ public class Dashboard_Physician extends javax.swing.JPanel {
   
       public void addrow(){
         DefaultTableModel m= (DefaultTableModel)jTable2.getModel();
+        m.setRowCount(0);
         Object rowdata[] =new Object[5];
         Vector<user> temp;
         temp= p.getPatients();
@@ -285,8 +288,20 @@ public class Dashboard_Physician extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-     //   new Remove(null, true).show();
+         user temp=null;
+         DefaultTableModel model=(DefaultTableModel)jTable2.getModel();
+         int index=jTable2.getSelectedRow();
+         String uid=(String) model.getValueAt(index,0);
+         Vector<user> patients=p.getPatients();
+         for(int i=0;i<patients.size();i++)
+         {
+             if(patients.get(i).getId().equals(uid))
+                  temp=patients.get(i);
+         }
+         patients.remove(temp);
+         temp.setPid(" ");
+        JOptionPane.showMessageDialog(this,"patient removed", " ", ERROR_MESSAGE);
+        addrow();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -295,9 +310,8 @@ public class Dashboard_Physician extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-       this.setVisible(false);
-        new Search(f).setVisible(true);
-       
+    
+       new phys_search(null, true,p).show();
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -320,18 +334,17 @@ public class Dashboard_Physician extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+          
+         DefaultTableModel model=(DefaultTableModel)jTable2.getModel();
+         int index=jTable2.getSelectedRow();
+         String uid=(String) model.getValueAt(index,0);
            this.setVisible(false);
-             Chat_room c=new   Chat_room(f,p,"");
+             Chat_room c=new   Chat_room(f,p,uid);
            f.add(c);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
-        DefaultTableModel model=(DefaultTableModel)jTable2.getModel();
-        int index=jTable2.getSelectedRow();
-        String u_id=(String)model.getValueAt(index, 0);
-          this.setVisible(false);
-          Chat_room c=new   Chat_room(f,p,u_id);
-        f.add(c);
+      
     }//GEN-LAST:event_jTable2MouseClicked
 
 

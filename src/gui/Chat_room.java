@@ -31,11 +31,17 @@ public class Chat_room extends javax.swing.JFrame {
         initComponents();
         this.f = f;
         this.u=u;
-        jLabel1.setText(u.getUsername());
-          Vector<chat> Allchats;
-        Allchats = admin.getU_phchats();
+        Vector<physician> phys=admin.getPhys();
+        for(int i=0;i<phys.size();i++)
+        {
+            if(phys.get(i).getId().equals(u.getPid()))
+                p=phys.get(i);
+        }
+        jLabel1.setText(p.getUname());
+        Vector<chat> Allchats;
+        Allchats=admin.getU_phchats();
         u.getchat(Allchats);
-       c=u.getCurrentchat();
+        c=u.getCurrentchat();
         if(c.lastmsgs()!=null)
         {
             jTextArea2.setText(c.lastmsgs());

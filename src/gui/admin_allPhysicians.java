@@ -33,6 +33,7 @@ public class admin_allPhysicians extends javax.swing.JPanel {
     }
       public void addrow(){
         DefaultTableModel m= (DefaultTableModel)jTable2.getModel();
+        m.setRowCount(0);
         Object rowdata[] =new Object[8];
         Vector<physician> temp;
         temp= admin.getPhys();

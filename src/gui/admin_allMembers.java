@@ -31,6 +31,7 @@ public class admin_allMembers extends javax.swing.JPanel {
     }
     public void addrow(){
         DefaultTableModel m= (DefaultTableModel)jTable2.getModel();
+        m.setRowCount(0);
         Object rowdata[] =new Object[10];
         Vector<user> temp;
         temp= admin.getUsers();
