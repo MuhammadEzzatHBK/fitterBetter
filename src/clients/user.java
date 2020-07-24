@@ -45,7 +45,7 @@ public class user extends person implements Serializable {
       setGoalT();
       setGoalM();
       setState();
-      
+      pid=" ";
     if (goalT == -1 )
         foodPlan =new GainWeight();
     else 
@@ -94,11 +94,15 @@ public class user extends person implements Serializable {
     
     /** Chatting*/
     public void getchat(Vector<chat> Allchats){
-         for(int i=0;i<Allchats.size();i++)
-         {
+        if(!Allchats.isEmpty())
+         for(int i=0;i<Allchats.size();i++){
             if(Allchats.get(i).id.equals(id))
                 currentchat=Allchats.get(i);
          }
+        else{
+            currentchat=new chat(id,pid);
+            Allchats.add(currentchat);
+        }
      }
     public chat getCurrentchat() {
         return currentchat;
