@@ -12,22 +12,23 @@ import java.util.ArrayList;
  * @author Sara-Labtop
  */
 public class chat {
-     String id,pid;
-
+    String id,pid;
+    private  ArrayList<String> msgs=new ArrayList<String>();
+    
+    public chat(String id){
+        this.id=id;
+        pid=" ";
+    }
     public ArrayList<String> getMsgs() {
         return msgs;
     }
-    public String lastmsgs(){
-        if(msgs.size()>0)
-        return msgs.get(msgs.size()-1);
-        else return null;
-    }
-   private  ArrayList<String> msgs=new ArrayList<String>();
-    public chat(String id,String pid){
-        this.id=id;
-        this.pid=pid;
-    }
     public void sendmsg(String m){
         msgs.add(m);
+    }
+    public String getPid() {
+        return pid;
+    }
+    public void setPid(String pid) {
+        this.pid = pid;
     }
  }

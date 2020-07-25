@@ -22,6 +22,7 @@ public class admin extends person {
       super(firstN,lastN,userpass,mail,gender);
       adminno++;
       id = new String("A"+adminno);
+      u_phchats=new Vector<chat>();
     }
     public static Vector<chat> getU_phchats() {
         return u_phchats;
@@ -49,6 +50,17 @@ public class admin extends person {
     }
     public static void setAdminno(int adminno) {
         admin.adminno = adminno;
+    }
+    public static void addchat(chat c){
+        u_phchats.add(c);
+    }
+     public static void change_pidchat(chat c){
+        for(int i=0;i<u_phchats.size();i++)
+            if(u_phchats.get(i).id.equals(c.id))
+            {
+                u_phchats.remove(u_phchats.get(i));
+                u_phchats.add(c);
+            }         
     }
     public boolean addUser(user X){
        users.add(X);

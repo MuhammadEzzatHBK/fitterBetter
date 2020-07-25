@@ -46,6 +46,8 @@ public class user extends person implements Serializable {
       setGoalM();
       setState();
       pid=" ";
+     currentchat=new chat(id);
+     admin.addchat(currentchat);
     if (goalT == -1 )
         foodPlan =new GainWeight();
     else 
@@ -99,15 +101,10 @@ public class user extends person implements Serializable {
             if(Allchats.get(i).id.equals(id))
                 currentchat=Allchats.get(i);
          }
-        else{
-            currentchat=new chat(id,pid);
-            Allchats.add(currentchat);
-        }
      }
     public chat getCurrentchat() {
         return currentchat;
     }
-    
     
     /** Getters and setters*/
     public String getId() {
@@ -121,6 +118,7 @@ public class user extends person implements Serializable {
     }
     public void setPid(String pid) {
         this.pid = pid;
+        currentchat.pid=pid;
     }
     public static int getUserno() {
         return userno;
