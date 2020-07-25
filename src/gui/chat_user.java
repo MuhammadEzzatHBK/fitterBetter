@@ -168,7 +168,7 @@ public class chat_user extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        this.setVisible(false);
-        users_physician e=new users_physician(f,u);
+        Member_Home e=new Member_Home(f,u);
         f.add(e);
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -18,14 +18,6 @@ public class general_login extends javax.swing.JFrame {
         user u2=new user("mazen","mohammed","mazen12","123","mazen@gmail.com",30,110 ,182.5,"male");
         physician p1=new physician("omar","ahmed","omar23","123","omar@gmail.com",35,"male");
         physician p2=new physician("May","ahmed","may","456","may@gmail.com",37,"female");
-        Vector<user> temp1=p1.getPatients();
-            temp1.add(u1);
-            p1.setPatients(temp1);
-            u1.setPid(p1.getId());
-        Vector<user> temp2=p2.getPatients();
-           temp2.add(u2);
-           p2.setPatients(temp2);
-           u2.setPid(p2.getId());
         a1.addPhysician(p2);
         a1.addPhysician(p1);
         a1.addUser(u1);
