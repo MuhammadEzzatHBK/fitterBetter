@@ -339,7 +339,7 @@ public class Dashboard_Physician extends javax.swing.JPanel {
          int index=jTable2.getSelectedRow();
          String uid=(String) model.getValueAt(index,0);
            this.setVisible(false);
-             Chat_room c=new   Chat_room(f,p,uid);
+             chat_phys c=new chat_phys(f,p,uid);
            f.add(c);
     }//GEN-LAST:event_jButton1ActionPerformed
 

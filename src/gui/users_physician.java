@@ -189,7 +189,7 @@ public class users_physician extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         this.setVisible(false);
-        Chat_room c=new   Chat_room(f,u);
+        chat_user c=new   chat_user(f,u);
         f.add(c);
     }//GEN-LAST:event_jButton1ActionPerformed
 
