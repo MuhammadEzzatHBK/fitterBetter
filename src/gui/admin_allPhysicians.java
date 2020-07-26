@@ -46,7 +46,7 @@ public class admin_allPhysicians extends javax.swing.JPanel {
             rowdata[2]=temp.elementAt(i).getUname();
             rowdata[3]=temp.elementAt(i).getMail();
             rowdata[4]=temp.elementAt(i).getAge();
-            rowdata[5]=temp.elementAt(i).getNumpatients();
+            rowdata[5]=temp.elementAt(i).getPatients().size();
             rowdata[6]=temp.elementAt(i).getSalary();
             rowdata[7]=temp.elementAt(i).getUserpass();
             m.addRow(rowdata);
