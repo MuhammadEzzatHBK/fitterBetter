@@ -29,11 +29,7 @@ public class chat_phys extends javax.swing.JPanel {
         this.f = f;
         this.p=p;
         Vector<user> users=admin.getUsers();
-        for(int i=0;i<users.size();i++)
-        {
-            if(users.get(i).getId().equals(u_id))
-                u=users.get(i);
-        }
+        u=(user)admin.getbyID(u_id,"user");
         jLabel1.setText(u.getUsername());
         Vector<clients.chat> Allchats;
         Allchats=admin.getU_phchats();

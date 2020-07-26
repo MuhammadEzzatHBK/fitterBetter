@@ -254,10 +254,9 @@ public class Sigup_Physician extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this,"username already exist", "Error", ERROR_MESSAGE);
         }
         else{
-                 Vector<physician> temp;
+                 
                  physician p=new physician(fname,lname,uname,pass,mail,a,gender);
-                 temp=admin.getPhys();
-                 temp.add(p);
+                 admin.addPhysician(p);
                  this.setVisible(false);
                  physician_pending d = new physician_pending(f);
                  f.add(d);

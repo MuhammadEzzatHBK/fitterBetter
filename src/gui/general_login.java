@@ -13,15 +13,14 @@ public class general_login extends javax.swing.JFrame {
     general_login f;
     public general_login(){
         initComponents();
-        admin a1=new admin("Sara","Ahmed","123","Sara@gmail.com","female");
         user u1=new user("maha","ahmed","maha123","145","maha@gmail.com",23,75.5 ,167.5,"female");
         user u2=new user("mazen","mohammed","mazen12","123","mazen@gmail.com",30,110 ,182.5,"male");
         physician p1=new physician("omar","ahmed","omar23","123","omar@gmail.com",35,"male");
         physician p2=new physician("May","ahmed","may","456","may@gmail.com",37,"female");
-        a1.addPhysician(p2);
-        a1.addPhysician(p1);
-        a1.addUser(u1);
-        a1.addUser(u2);
+        admin.addPhysician(p2);
+        admin.addPhysician(p1);
+        admin.addUser(u1);
+        admin.addUser(u2);
        
     }
    

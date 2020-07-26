@@ -458,10 +458,9 @@ public class Signup_Member extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this,"username already exist", "Error", ERROR_MESSAGE);
         }  
         else{
-                  Vector<user> temp;
+                   
                   user u=new user(fname,lname,uname,pass,mail,age,weight,height,gender);
-                  temp=admin.getUsers();
-                  temp.add(u);
+                  admin.addUser(u);
                   this.setVisible(false);
                   Member_Home d = new Member_Home(f,u);
                   f.add(d);
