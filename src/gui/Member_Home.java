@@ -30,20 +30,21 @@ public class Member_Home extends javax.swing.JPanel {
     else 
         jLabel22.setText("maintain");
     
-    loadPlan(false);
+    loadPlan(false, false);
     }
-    public ArrayList<String> randomFn(ArrayList<String> list){
+    public ArrayList<String> randomFn(ArrayList<String> list, boolean remove){
         ArrayList<String> newList = new ArrayList<String>();
         Random rand = new Random(); 
         for (int i = 0; i < 4; i++) { 
             int randomIndex = rand.nextInt(list.size()); 
               newList.add(list.get(randomIndex)); 
-              list.remove(randomIndex); 
+              if (remove)
+                list.remove(randomIndex); 
         }         
         return newList;
     }
     
-    public void loadPlan(boolean update) { 
+    public void loadPlan(boolean update, boolean remove) { 
 
         if (update == true|| u1.getWeekNo() == 0)
         {
@@ -57,21 +58,21 @@ public class Member_Home extends javax.swing.JPanel {
         }
         jLabel29.setText(String.valueOf(u1.getWeekNo()));        
         /*************************************************************** BREAKFAST*/
-        ArrayList<String> newList = randomFn(u1.getFoodPlan().getBreakFastArray());
+        ArrayList<String> newList = randomFn(u1.getFoodPlan().getBreakFastArray(), remove);
         jLabel31.setText(newList.get(0));
         jLabel32.setText(newList.get(1));
         jLabel33.setText(newList.get(2));
         jLabel34.setText(newList.get(3));
         
         /*************************************************************** LUNCH*/
-        newList = randomFn(u1.getFoodPlan().getLunchArray());
+        newList = randomFn(u1.getFoodPlan().getLunchArray(), remove);
         jLabel11.setText(newList.get(0));
         jLabel12.setText(newList.get(1));
         jLabel13.setText(newList.get(2));
         jLabel14.setText(newList.get(3));
 
         /*************************************************************** DINNER*/
-        newList = randomFn(u1.getFoodPlan().getDinnerArray());
+        newList = randomFn(u1.getFoodPlan().getDinnerArray(), remove);
         jLabel36.setText(newList.get(0));
         jLabel37.setText(newList.get(1));
         jLabel38.setText(newList.get(2));
@@ -615,7 +616,7 @@ public class Member_Home extends javax.swing.JPanel {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-        loadPlan(true);
+        loadPlan(true, true );
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
