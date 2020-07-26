@@ -16,13 +16,12 @@ public class admin extends person {
     private static Vector<user> users=new Vector<user>();
     private static Vector<physician> phys= new Vector<physician>();
     private static int adminno = 0;
-    private static Vector<chat> u_phchats;
+    private static Vector<chat> u_phchats=new Vector<chat>();
             
   public  admin(String firstN, String lastN, String userpass, String mail,String gender){
       super(firstN,lastN,userpass,mail,gender);
       adminno++;
       id = new String("A"+adminno);
-      u_phchats=new Vector<chat>();
     }
     public static Vector<chat> getU_phchats() {
         return u_phchats;
@@ -62,7 +61,7 @@ public class admin extends person {
                 u_phchats.add(c);
             }         
     }
-    public boolean addUser(user X){
+    static public boolean addUser(user X){
        users.add(X);
        if(!(phys.isEmpty())){
        int min = phys.elementAt(0).getPatients().size();
@@ -80,7 +79,7 @@ public class admin extends person {
        }
        return(isfound(X.getId(),"user"));
     }
-    public boolean addPhysician(physician X){
+   static public boolean addPhysician(physician X){
         phys.add(X);
         String ID = X.getId();
         return(isfound(ID,"physician"));

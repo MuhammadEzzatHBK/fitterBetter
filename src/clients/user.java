@@ -45,10 +45,9 @@ public class user extends person implements Serializable {
       setGoalT();
       setGoalM();
       setState();
-      pid=" ";
      currentchat=new chat(id);
      admin.addchat(currentchat);
-    if (goalT == -1 )
+     if (goalT == -1 )
         foodPlan =new GainWeight();
     else 
         foodPlan =new LoseWeight();
