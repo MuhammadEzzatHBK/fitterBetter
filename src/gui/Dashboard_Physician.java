@@ -10,6 +10,7 @@ import clients.user;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
+import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -291,6 +292,7 @@ public class Dashboard_Physician extends javax.swing.JPanel {
          user temp=null;
          DefaultTableModel model=(DefaultTableModel)jTable2.getModel();
          int index=jTable2.getSelectedRow();
+         if(index!=-1){
          String uid=(String) model.getValueAt(index,0);
          Vector<user> patients=p.getPatients();
          for(int i=0;i<patients.size();i++)
@@ -300,8 +302,10 @@ public class Dashboard_Physician extends javax.swing.JPanel {
          }
          patients.remove(temp);
          temp.setPid(" ");
-        JOptionPane.showMessageDialog(this,"patient removed", " ", ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this,"patient removed", " ", INFORMATION_MESSAGE);
         addrow();
+         }
+         else JOptionPane.showMessageDialog(this,"you didnt select a patient", "Error", ERROR_MESSAGE);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -337,10 +341,14 @@ public class Dashboard_Physician extends javax.swing.JPanel {
           
          DefaultTableModel model=(DefaultTableModel)jTable2.getModel();
          int index=jTable2.getSelectedRow();
-         String uid=(String) model.getValueAt(index,0);
+         if(index!=-1)
+         {
+           String uid=(String) model.getValueAt(index,0);
            this.setVisible(false);
-             chat_phys c=new chat_phys(f,p,uid);
+           chat_phys c=new chat_phys(f,p,uid);
            f.add(c);
+         }
+         else JOptionPane.showMessageDialog(this,"you didnt select a patient", "Error", ERROR_MESSAGE);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked

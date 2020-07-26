@@ -7,6 +7,8 @@ package gui;
 import clients.admin;
 import clients.user;
 import java.util.Vector;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -261,18 +263,24 @@ public class admin_allMembers extends javax.swing.JPanel {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
          DefaultTableModel model=(DefaultTableModel)jTable2.getModel();
          int index=jTable2.getSelectedRow();
+         if(index!=-1){
           String u_id=(String) model.getValueAt(index, 0);
           new Remove(null, true,f,a,u_id).setVisible(true);
+         }
+        else JOptionPane.showMessageDialog(this,"you didnt select a member", "Error", ERROR_MESSAGE);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
           DefaultTableModel model=(DefaultTableModel)jTable2.getModel();
-         int index=jTable2.getSelectedRow();
+          int index=jTable2.getSelectedRow();
+          if(index!=-1){
           String upass=(String) model.getValueAt(index,9);
-                        this.setVisible(false);
-        edit_Member e = new edit_Member(f,a,upass);
-        f.add(e);
+          this.setVisible(false);
+          edit_Member e = new edit_Member(f,a,upass);
+          f.add(e);
+          }
+          else JOptionPane.showMessageDialog(this,"you didnt select a member", "Error", ERROR_MESSAGE);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed

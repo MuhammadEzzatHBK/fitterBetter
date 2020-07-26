@@ -8,6 +8,8 @@ package gui;
 import clients.admin;
 import clients.physician;
 import java.util.Vector;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -282,18 +284,24 @@ public class admin_allPhysicians extends javax.swing.JPanel {
         // TODO add your handling code here:
          DefaultTableModel model=(DefaultTableModel)jTable2.getModel();
          int index=jTable2.getSelectedRow();
+         if(index!=-1){
           String id=(String) model.getValueAt(index, 0);
-        new Remove(null, true,f,a,id).setVisible(true);
+         new Remove(null, true,f,a,id).setVisible(true);
+         }
+            else JOptionPane.showMessageDialog(this,"you didnt select a physician", "Error", ERROR_MESSAGE);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         DefaultTableModel model=(DefaultTableModel)jTable2.getModel();
          int index=jTable2.getSelectedRow();
+         if(index!=-1){
           String pass=(String) model.getValueAt(index, 7);
-        this.setVisible(false);
-        edit_Physician e = new edit_Physician(f,a,pass);
-        f.add(e);
+          this.setVisible(false);
+          edit_Physician e = new edit_Physician(f,a,pass);
+          f.add(e);
+         }
+            else JOptionPane.showMessageDialog(this,"you didnt select a physician", "Error", ERROR_MESSAGE);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
