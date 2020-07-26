@@ -64,6 +64,7 @@ public class admin extends person {
     }
     public boolean addUser(user X){
        users.add(X);
+       if(!(phys.isEmpty())){
        int min = phys.elementAt(0).getPatients().size();
        int minindex = 0;
        for(int i =0;i<phys.size();i++){
@@ -74,8 +75,10 @@ public class admin extends person {
        }
        phys.elementAt(minindex).getPatients().add(X);
        X.setPid(phys.elementAt(minindex).getId());
-       String ID = X.getId();
-       return(isfound(ID,"user"));
+       }else{
+           X.setPid("NA");
+       }
+       return(isfound(X.getId(),"user"));
     }
     public boolean addPhysician(physician X){
         phys.add(X);
@@ -217,6 +220,22 @@ public class admin extends person {
     
     }
    
+     public static Object getbyID(String id, String orin){
+        if(orin.equals("user")){
+            for(int i=0;i<users.size();i++)
+                if(users.elementAt(i).getId().equals(id))
+                    return users.elementAt(i);
+        
+        }else{
+            for(int i=0;i<phys.size();i++)
+                if(phys.elementAt(i).getId().equals(id))
+                    return phys.elementAt(i);
+            
+        }
+        return "ID doesn't exist";
+    
+    }
+    
     public  void sendMail(String Title, String Msg,  boolean toUsers)
     {
         final String username = "betterfitter.program@gmail.com";
