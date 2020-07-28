@@ -196,11 +196,20 @@ public class admin extends person {
          
         return false;
     }
-     public static Object getUserbyusername(String username){
-        for(int i =0; i<users.size();i++){
+     public static Object getUserbyusername(String username,String orin){
+         if(orin.equals("user")){
+         for(int i =0; i<users.size();i++){
             if(users.elementAt(i).getUsername().contains(username))
                 return users.elementAt(i);
         }   
+         }else{
+             for(int i =0; i<phys.size();i++){
+            if(phys.elementAt(i).getUname().contains(username))
+                return phys.elementAt(i);
+        }   
+         
+         }
+        
         return "Username doesn't exist !";
     }
    public static Object getbyPassword(String password, String orin){
