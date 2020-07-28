@@ -209,13 +209,11 @@ public class Login_Member extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         //Mossad: Make sure that username and password are correct 
-      
-       
         String pass=String.valueOf(jPasswordField1.getPassword());
         String uname=jTextField1.getText();
         if(admin.isreserved(pass,uname))
         {
-             user u=(user)admin.getbyPassword(pass,"user");
+            user u=(user)admin.getUserbyusername(uname);
             this.setVisible(false);
             Member_Home d = new Member_Home(f,u);
             f.add(d);
