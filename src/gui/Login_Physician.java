@@ -211,7 +211,7 @@ public class Login_Physician extends javax.swing.JPanel {
         String uname=jTextField1.getText();
         if(admin.isreserved(pass,uname))
         { 
-            physician p=(physician)admin.getbyPassword(pass,"phys");
+            physician p=(physician)admin.getUserbyusername(uname,"phys");
             this.setVisible(false);
             Dashboard_Physician g =new Dashboard_Physician(f,p);
             f.add(g);

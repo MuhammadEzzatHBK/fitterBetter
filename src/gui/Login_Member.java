@@ -213,7 +213,7 @@ public class Login_Member extends javax.swing.JPanel {
         String uname=jTextField1.getText();
         if(admin.isreserved(pass,uname))
         {
-            user u=(user)admin.getUserbyusername(uname);
+            user u=(user)admin.getUserbyusername(uname,"user");
             this.setVisible(false);
             Member_Home d = new Member_Home(f,u);
             f.add(d);

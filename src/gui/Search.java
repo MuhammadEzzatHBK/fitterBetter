@@ -133,7 +133,7 @@ public class Search extends javax.swing.JDialog {
         String name=jTextField1.getText();
          jLabel2.setText("Not Found");
         jLabel2.setVisible(true);
-       Object unametest=admin.getUserbyusername(name);
+       Object unametest=admin.getUserbyusername(name,"user");
         if(unametest instanceof user){
             jLabel2.setText(((user) unametest).getId());
              

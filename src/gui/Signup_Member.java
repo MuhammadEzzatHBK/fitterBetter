@@ -453,7 +453,7 @@ public class Signup_Member extends javax.swing.JPanel {
         else if(jRadioButton2.isSelected()){
             gender="male";
         }
-       Object unametest=admin.getUserbyusername(uname);
+       Object unametest=admin.getUserbyusername(uname,"user");
         if(unametest instanceof user){
             JOptionPane.showMessageDialog(this,"username already exist", "Error", ERROR_MESSAGE);
         }  

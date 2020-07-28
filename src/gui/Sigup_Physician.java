@@ -237,20 +237,24 @@ public class Sigup_Physician extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+        int a=Integer.valueOf(jTextField2.getText());
+        if(a>=25)
+        {
         String gender=" ";
         String pass=String.valueOf(jPasswordField1.getPassword());
         String fname=jTextField1.getText();
         String lname=jTextField4.getText();
         String uname=jTextField3.getText();
         String mail=jTextField8.getText();
-        int a=Integer.valueOf(jTextField2.getText());
          if (jRadioButton1.isSelected()){
             gender="female";
         }
         else if(jRadioButton2.isSelected()){
             gender="male";
         }
-       if(admin.isreserved(pass, uname)){
+       Object unametest=admin.getUserbyusername(uname,"phys");
+        if(unametest instanceof physician){
             JOptionPane.showMessageDialog(this,"username already exist", "Error", ERROR_MESSAGE);
         }
         else{
@@ -261,6 +265,8 @@ public class Sigup_Physician extends javax.swing.JPanel {
                  physician_pending d = new physician_pending(f);
                  f.add(d);
         }
+       }
+        else  JOptionPane.showMessageDialog(this,"Sorry we do not accept physicians younger than 25", "Error", ERROR_MESSAGE);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
