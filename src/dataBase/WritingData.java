@@ -25,41 +25,26 @@ public class WritingData {
         LoseWeight L = new LoseWeight();
         
         ArrayList<meal> baseData =readBaseData.read_csv("baseData.txt");
-        System.out.println(baseData.get(0).getName());
-
+        
+        
         
         try
         {
             File F = new File("NEWDATA.txt");
-
             PrintStream writer = new PrintStream(F);
-            for(int i = 0 ; i < L.SetMealType(M.DataCleaning(baseData)).size();i++)
+            for(int i = 0 ; i < L.SetMealType().size();i++)
             {
-                if(L.SetMealType(M.DataCleaning(baseData)).get(i) != null)
-                {
-                    writer.println(L.SetMealType(M.DataCleaning(baseData))
-                            .get(i).getName()+','+L.SetMealType(M.DataCleaning(baseData))
-                                    .get(i).getPortion_amount()+','+L.SetMealType(M.DataCleaning(baseData))
-                                            .get(i).getPortion_name()+','+L.SetMealType(M.DataCleaning(baseData))
-                                                    .get(i).getGrain()+','+L.SetMealType(M.DataCleaning(baseData))
-                                                            .get(i).getVegetable()+','+L.SetMealType(M.DataCleaning(baseData))
-                                                                    .get(i).getFruit()+','+L.SetMealType(M.DataCleaning(baseData))
-                                                                            .get(i).getMeat()+','+L.SetMealType(M.DataCleaning(baseData))
-                                                                                    .get(i).getCalories()+','+L.SetMealType(M.DataCleaning(baseData))
-                                                                                            .get(i).getMealType());
-                }
+                if(L.SetMealType().get(i) != null)
+                        {
+                            writer.println(L.SetMealType().get(i).getName()+','+L.SetMealType().get(i).getPortion_amount()+','+L.SetMealType().get(i).getPortion_name()+','+L.SetMealType().get(i).getGrain()+','+L.SetMealType().get(i).getVegetable()+','+L.SetMealType().get(i).getFruit()+','+L.SetMealType().get(i).getMeat()+','+L.SetMealType().get(i).getCalories()+','+L.SetMealType().get(i).getMealType());
+                        }
             }
             writer.close();
         } 
         catch (FileNotFoundException fnf) 
         {
-            System.out.println("the file wasn't found");
+            System.err.println("the file wasn't found");
         }
-        LoseWeight l = new LoseWeight();
-        ArrayList<String> breakfast = l.RecommendBreakFast();
-                System.out.println(breakfast.get(0));
-
-
     }
     
     

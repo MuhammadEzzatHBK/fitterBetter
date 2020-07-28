@@ -22,40 +22,26 @@ public abstract class FoodRecommendation  {
     // making new cleaned ArrayList of type meals
     public ArrayList<meal> CleanedData= M.DataCleaning(baseData);
     // to use it in the sub classes
-    ArrayList<String> BreakFastArray;
-    ArrayList<String> LunchArray;
-    ArrayList<String> DinnerArray;
-    
+    ArrayList<ExercisePlan> ExerciseData = ReadExercises.read_csv("Exercises.txt");
+    protected ArrayList<String> BreakFastArray;
+    protected ArrayList<String> LunchArray;
+    protected ArrayList<String> DinnerArray;
+    protected ArrayList<String> ExerciseArray;
     
     public FoodRecommendation ()
-    {   
+    {
         BreakFastArray =new ArrayList<String>();
         LunchArray = new ArrayList<String>();
         DinnerArray = new ArrayList<String>();
-        
+        ExerciseArray = new ArrayList<String>();
     }
     
-    public abstract void SetBreakFast(ArrayList<meal> CleanedData);
-    public abstract void SetLunch(ArrayList<meal> CleanedData);
-    public abstract void SetDinner(ArrayList<meal> CleanedData);
+    public abstract void SetBreakFast();
+    public abstract void SetLunch();
+    public abstract void SetDinner();
     public abstract ArrayList<String>  RecommendBreakFast();
     public abstract ArrayList<String>  RecommendLunch();
     public abstract ArrayList<String>  RecommendDinner();
-
-    public  ArrayList<String> getBreakFastArray() {
-        return BreakFastArray;
-    }
-
-    public  ArrayList<String> getLunchArray() {
-        return LunchArray;
-    }
-
-    public  ArrayList<String> getDinnerArray() {
-        return DinnerArray;
-    }
-    
-    
-
-    
+    public abstract ArrayList<String>  Recommendexercises();
 }
             

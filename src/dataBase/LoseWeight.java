@@ -15,8 +15,9 @@ import java.util.Comparator;
  */
 public class LoseWeight extends FoodRecommendation {
     
+    
      @Override
-    public void SetBreakFast(ArrayList<meal> CleanedData)
+    public void SetBreakFast()
     {
         double[] BreakFastWeight = new double[]{30,20,60,200,10,-3.5005}; 
         
@@ -26,7 +27,7 @@ public class LoseWeight extends FoodRecommendation {
         }
     }
     @Override
-    public void SetLunch(ArrayList<meal> CleanedData)
+    public void SetLunch()
     {
         double[] LunchWeight = new double[]{10,200,20,30,60,-3.5}; 
         
@@ -37,7 +38,7 @@ public class LoseWeight extends FoodRecommendation {
        
     }
     @Override
-    public void SetDinner(ArrayList<meal> CleanedData)
+    public void SetDinner()
     {
         double[] DinnerWeight = new double[]{10,30,200,60,20,-3.5002}; 
         
@@ -50,7 +51,7 @@ public class LoseWeight extends FoodRecommendation {
     @Override
     public ArrayList<String>  RecommendBreakFast()
     {
-       SetBreakFast(CleanedData);
+       SetBreakFast();
        
        Collections.sort(CleanedData , new Comparator<meal>()
        {
@@ -72,7 +73,7 @@ public class LoseWeight extends FoodRecommendation {
     @Override
     public ArrayList<String>  RecommendLunch()
     {
-       SetLunch(CleanedData);
+       SetLunch();
        
        Collections.sort(CleanedData , new Comparator<meal>()
        {
@@ -93,7 +94,7 @@ public class LoseWeight extends FoodRecommendation {
     @Override
     public ArrayList<String>  RecommendDinner()
     {
-       SetDinner(CleanedData);
+       SetDinner();
        
        Collections.sort(CleanedData , new Comparator<meal>()
        {
@@ -111,11 +112,11 @@ public class LoseWeight extends FoodRecommendation {
        
        return DinnerArray;
     }
-    public ArrayList<meal> SetMealType(ArrayList<meal> CleanedData)
+    public ArrayList<meal> SetMealType()
     {
-        SetBreakFast(CleanedData);
-        SetLunch(CleanedData);
-        SetDinner(CleanedData);
+        SetBreakFast();
+        SetLunch();
+        SetDinner();
         for(int i = 0 ; i < CleanedData.size() ; i++) 
         {
             if(CleanedData.get(i).getDinnerScore() > CleanedData.get(i).getLunchScore() && CleanedData.get(i).getDinnerScore() > CleanedData.get(i).getBreakFastScore())
@@ -134,5 +135,16 @@ public class LoseWeight extends FoodRecommendation {
         }
       return CleanedData;  
     }
-    
+     @Override
+    public ArrayList<String>  Recommendexercises()
+    {
+        for (int i = 0 ; i < ExerciseData.size() ; i++)
+        {
+            if (ExerciseData.get(i).getExerciseType().equals("Lose Weigh"))
+            {
+                ExerciseArray.add(ExerciseData.get(i).getExerciseName());
+            }
+        }
+        return ExerciseArray;
+    }
 }

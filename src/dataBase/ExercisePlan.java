@@ -16,10 +16,13 @@ public class ExercisePlan {
     
     public ExercisePlan(String[] metadata)
     {
-        ExerciseName = metadata[1];
-        Calories  =  Double.valueOf(metadata[2]);
-        ExerciseType = metadata[3]; 
+        ExerciseName = metadata[0];
+        ExerciseName = ExerciseName.substring(1);
+        Calories  =  Double.valueOf(metadata[1]);
+        ExerciseType = metadata[2];
+        ExerciseType = ExerciseType.substring(0, ExerciseType.length()-2);
     }
+    
 
     public String getExerciseName() {
         return ExerciseName;

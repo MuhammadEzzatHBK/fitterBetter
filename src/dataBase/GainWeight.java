@@ -17,7 +17,7 @@ import java.util.List;
 public class GainWeight extends FoodRecommendation {
     
     @Override
-    public void SetBreakFast(ArrayList<meal> CleanedData)
+    public void SetBreakFast()
     {
         //BreakFast Variables weights for gaining weight
         double[] BreakFastWeight = new double[]{100,20,60,20,10,0.5}; 
@@ -28,7 +28,7 @@ public class GainWeight extends FoodRecommendation {
         }
     }
     @Override
-    public void SetLunch(ArrayList<meal> CleanedData)
+    public void SetLunch()
     {
         //Lunch Variables weights for gaining weight
         double[] LunchWeight = new double[]{50,100,60,20,100,0.5}; 
@@ -40,7 +40,7 @@ public class GainWeight extends FoodRecommendation {
        
     }
     @Override
-    public void SetDinner(ArrayList<meal> CleanedData)
+    public void SetDinner()
     {
         double[] DinnerWeight = new double[]{20,50,20,100,20,0.5}; 
         
@@ -54,7 +54,7 @@ public class GainWeight extends FoodRecommendation {
     // takes the ArrayList and return arraylist of strings contains breakfast meals name
     public ArrayList<String>  RecommendBreakFast()
     {
-       SetBreakFast(CleanedData);
+       SetBreakFast();
        //sort the arraylist in descinding order of the breakfast score
        Collections.sort(CleanedData , new Comparator<meal>()
        {
@@ -64,7 +64,7 @@ public class GainWeight extends FoodRecommendation {
                return Double.valueOf(m2.getBreakFastScore()).compareTo(m1.getBreakFastScore());
            }
        });
-       // takes the higher 16 score of breakfast and puts their names in array
+       // takes the higher 15 score of breakfast and puts their names in array
        for(int i = 0 ; i < 16 ; i++)
        {
            BreakFastArray.add(CleanedData.get(i).getPortion_amount() + "\t" + CleanedData.get(i).getPortion_name() + CleanedData.get(i).getName())  ;
@@ -77,7 +77,7 @@ public class GainWeight extends FoodRecommendation {
     // takes the ArrayList and return arraylist of strings contains lunch meals name
     public ArrayList<String>  RecommendLunch()
     {
-       SetLunch(CleanedData);
+       SetLunch();
         //sort the arraylist in descinding order of the lunch score
        Collections.sort(CleanedData , new Comparator<meal>()
        {
@@ -87,7 +87,7 @@ public class GainWeight extends FoodRecommendation {
                return Double.valueOf(m2.getLunchScore()).compareTo(m1.getLunchScore());
            }
        });
-       // takes the higher 16 score of lunch and puts their names in array
+       // takes the higher 15 score of lunch and puts their names in array
        for(int i = 0 ; i < 16 ; i++)
        {
            LunchArray.add(CleanedData.get(i).getPortion_amount() + "\t" + CleanedData.get(i).getPortion_name() + CleanedData.get(i).getName())  ;
@@ -99,7 +99,7 @@ public class GainWeight extends FoodRecommendation {
     // takes the ArrayList and return arraylist of strings contains dinner meals name
     public ArrayList<String>  RecommendDinner()
     {
-       SetDinner(CleanedData);
+       SetDinner();
        //sort the arraylist in descinding order of the dinner score
        Collections.sort(CleanedData , new Comparator<meal>()
        {
@@ -109,7 +109,7 @@ public class GainWeight extends FoodRecommendation {
                return Double.valueOf(m2.getDinnerScore()).compareTo(m1.getDinnerScore());
            }
        });
-        // takes the higher 16 score of dinner and puts their names in array
+        // takes the higher 15 score of dinner and puts their names in array
        for(int i = 0 ; i < 16 ; i++)
        {
            DinnerArray.add(CleanedData.get(i).getPortion_amount() + "\t" + CleanedData.get(i).getPortion_name() + CleanedData.get(i).getName())  ;
@@ -117,6 +117,17 @@ public class GainWeight extends FoodRecommendation {
        
        return DinnerArray;
     }
-    
+    @Override
+    public ArrayList<String>  Recommendexercises()
+    {
+        for (int i = 0 ; i < ExerciseData.size() ; i++)
+        {
+            if (ExerciseData.get(i).getExerciseType().equals("Gain Weigh"))
+            {
+                ExerciseArray.add(ExerciseData.get(i).getExerciseName());
+            }
+        }
+        return ExerciseArray;
+    }
     
 }
