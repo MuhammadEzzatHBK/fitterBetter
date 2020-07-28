@@ -53,6 +53,7 @@ public class Member_Home extends javax.swing.JPanel {
                 u1.getFoodPlan().RecommendBreakFast();
                 u1.getFoodPlan().RecommendLunch();
                 u1.getFoodPlan().RecommendDinner();
+                u1.getFoodPlan().Recommendexercises();
             }
             u1.incWeekNo();
         }
@@ -609,7 +610,7 @@ public class Member_Home extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-                this.setVisible(false);
+        this.setVisible(false);
         exercise e = new exercise(f,u1);
         f.add(e);
     }//GEN-LAST:event_jButton1ActionPerformed

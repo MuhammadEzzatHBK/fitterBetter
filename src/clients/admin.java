@@ -235,7 +235,7 @@ public class admin extends person {
     
     }
     
-    public  void sendMail(String Title, String Msg,  boolean toUsers)
+    public  void sendMailFn(String Title, String Msg,  boolean toUsers)
     {
         final String username = "betterfitter.program@gmail.com";
         final String password = "fcisoopbio1";

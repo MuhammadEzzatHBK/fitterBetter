@@ -207,14 +207,10 @@ public class mail extends javax.swing.JPanel {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
-        Dashboard_Admin d = new Dashboard_Admin(f,a);
-        f.add(d);
         String title = jTextField1.getText();
         String msg = jTextArea1.getText();
-        a.sendMail(title, msg, toUsers );
+        a.sendMailFn(title, msg, toUsers );
         new Mail_confirm(null, true).show();
-
         
     }//GEN-LAST:event_jButton9ActionPerformed
 

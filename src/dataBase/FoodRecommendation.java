@@ -43,5 +43,27 @@ public abstract class FoodRecommendation  {
     public abstract ArrayList<String>  RecommendLunch();
     public abstract ArrayList<String>  RecommendDinner();
     public abstract ArrayList<String>  Recommendexercises();
+
+    public ArrayList<String> getBreakFastArray() {
+        return BreakFastArray;
+    }
+
+    public ArrayList<String> getLunchArray() {
+        return LunchArray;
+    }
+
+    public ArrayList<String> getDinnerArray() {
+        return DinnerArray;
+    }
+
+    public ArrayList<String> getExerciseArray() {
+        return ExerciseArray;
+    }
+    
+    
+    
+    
+    
+    
 }
             
