@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random; 
 import javafx.scene.shape.Arc;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
 
 
 
@@ -59,21 +61,21 @@ public class Member_Home extends javax.swing.JPanel {
         }
         jLabel29.setText(String.valueOf(u1.getWeekNo()));        
         /*************************************************************** BREAKFAST*/
-        ArrayList<String> newList = randomFn(u1.getFoodPlan().getBreakFastArray(), remove);
+        ArrayList<String> newList = randomFn(u1.getFoodPlan().RecommendBreakFast(), remove);
         jLabel31.setText(newList.get(0));
         jLabel32.setText(newList.get(1));
         jLabel33.setText(newList.get(2));
         jLabel34.setText(newList.get(3));
         
         /*************************************************************** LUNCH*/
-        newList = randomFn(u1.getFoodPlan().getLunchArray(), remove);
+        newList = randomFn(u1.getFoodPlan().RecommendLunch(), remove);
         jLabel11.setText(newList.get(0));
         jLabel12.setText(newList.get(1));
         jLabel13.setText(newList.get(2));
         jLabel14.setText(newList.get(3));
 
         /*************************************************************** DINNER*/
-        newList = randomFn(u1.getFoodPlan().getDinnerArray(), remove);
+        newList = randomFn(u1.getFoodPlan().RecommendDinner(), remove);
         jLabel36.setText(newList.get(0));
         jLabel37.setText(newList.get(1));
         jLabel38.setText(newList.get(2));
@@ -635,10 +637,15 @@ public class Member_Home extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
+        if(!u1.getPid().equals("NA"))
+        {
         this.setVisible(false);
         chat_user c=new   chat_user(f,u1);
         f.add(c);
+        }
+        else {
+          JOptionPane.showMessageDialog(this,"you are not connected to a physician a request for a new physician has been sent", "Error", ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
 

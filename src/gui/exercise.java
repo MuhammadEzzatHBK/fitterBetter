@@ -23,19 +23,25 @@ public class exercise extends javax.swing.JPanel {
             jLabel25.setText("Gain");
         else 
             jLabel25.setText("maintain");
-        loadExPlan(u1.getFoodPlan().getExerciseArray());
+        loadExPlan(u1.getFoodPlan().Recommendexercises());
         
     }
     public void loadExPlan(ArrayList<String>  Ex){
-        ArrayList<String>  newList = new ArrayList<>();
+        ArrayList<String> newlist=new ArrayList<String>();
         Random rand = new Random(); 
         for (int i = 0; i < 4; i++) { 
             int randomIndex = rand.nextInt(Ex.size()); 
-              newList.add(Ex.get(randomIndex)); 
-        }         
-        jLabel31.setText(newList.get(0));
-        jLabel34.setText(newList.get(1));
-        jLabel37.setText(newList.get(2));
+             String[] arrOfStr = Ex.get(randomIndex).split(",", 2); 
+             newlist.add(arrOfStr[0]);
+             newlist.add(arrOfStr[1]);
+        } 
+               
+        jLabel31.setText(newlist.get(0));
+        jLabel32.setText(newlist.get(1));
+        jLabel34.setText(newlist.get(2));
+        jLabel35.setText(newlist.get(3));
+        jLabel37.setText(newlist.get(4));
+        jLabel38.setText(newlist.get(5));
     }
 
     @SuppressWarnings("unchecked")

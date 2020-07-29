@@ -440,7 +440,7 @@ public class Signup_Member extends javax.swing.JPanel {
         // TODO add your handling code here:
         String gender=" ";
         String uname= jTextField9.getText();
-        String fname= jTextField7.getText();
+        String fname= jTextField10.getText();
          String lname= jTextField7.getText();
         String pass= jTextField3.getText();
         String mail= jTextField8.getText();
