@@ -199,7 +199,7 @@ public class p_add_Member extends javax.swing.JPanel {
          Object unametest=admin.getUserbyusername(uname,"user");
         if(unametest instanceof user){
                   user u=(user)unametest;
-                if(!u.getPid().equals("NA"))
+                if(u.getPid().equals("NA"))
                 {
                   Vector<user> temp=p.getPatients();
                   temp.add(u);
