@@ -100,4 +100,24 @@ public class physician extends person {
                 currentchat=Allchats.get(i);
          }
      }
+    public void removeUser(String id){
+        int removalindex = -1;
+        for(int i =0;i<patients.size();i++)
+            if(patients.get(i).getId().equals(id))
+                removalindex = i;
+        if(removalindex == -1)
+            return;
+        for(int i = 0;i<admin.getPhys().size();i++){
+            if(admin.getPhys().elementAt(i).equals(this))
+                continue;
+            else{
+                physician tmp = (physician)admin.getPhys().get(i);
+                patients.elementAt(removalindex).setPid(tmp.getId());
+                tmp.getPatients().add(patients.elementAt(removalindex));
+                tmp = null;
+            }
+        
+        }
+        patients.removeElementAt(removalindex);
+    }
 }
