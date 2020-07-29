@@ -230,6 +230,10 @@ public class user extends person implements Serializable {
     public void setDivision(String division) {
         this.division = division;
     }
+    public String getoriginalweight()
+    {
+        return track.get(0);
+    }
    
 }
 
