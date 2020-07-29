@@ -287,7 +287,7 @@ public class Analysis extends javax.swing.JPanel {
         jLabel3.setText(String.valueOf((float)u1.getBmi()));
         jLabel5.setText(u1.getState());
        
-     int gtype=u1.getGoalT();
+    int gtype=u1.getGoalT();
     if(gtype==1)
     {
         jLabel8.setText("Lose");

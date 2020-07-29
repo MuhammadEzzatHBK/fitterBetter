@@ -459,7 +459,7 @@ public class Signup_Member extends javax.swing.JPanel {
         }  
         else{
                    
-                  user u=new user(fname,lname,uname,pass,mail,age,weight,height,gender);
+                  user u=new user(fname,lname,uname,pass,mail,age,weight,height,gender,"user");
                   admin.addUser(u);
                   this.setVisible(false);
                   Member_Home d = new Member_Home(f,u);

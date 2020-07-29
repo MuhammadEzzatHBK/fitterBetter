@@ -436,7 +436,7 @@ public class add_Member extends javax.swing.JPanel {
         }  
         else{
                   Vector<user> temp;
-                  user u=new user(fname,lname,uname,pass,mail,age,weight ,height,gender);
+                  user u=new user(fname,lname,uname,pass,mail,age,weight ,height,gender,"user");
                   temp=admin.getUsers();
                   temp.add(u);
                   this.setVisible(false);

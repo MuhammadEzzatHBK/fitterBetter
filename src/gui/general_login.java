@@ -13,8 +13,8 @@ public class general_login extends javax.swing.JFrame {
     general_login f;
     public general_login(){
         initComponents();
-        user u1=new user("maha","ahmed","maha123","145","maha@gmail.com",23,75.5 ,167.5,"female");
-        user u2=new user("mazen","mohammed","mazen12","123","mazen@gmail.com",30,110 ,182.5,"male");
+        user u1=new user("maha","ahmed","maha123","145","maha@gmail.com",23,75.5 ,167.5,"female","user");
+        user u2=new user("mazen","mohammed","mazen12","123","mazen@gmail.com",30,110 ,182.5,"male","user");
         physician p1=new physician("omar","ahmed","omar23","123","omar@gmail.com",35,"male");
         physician p2=new physician("May","ahmed","may","456","may@gmail.com",37,"female");
         admin.addPhysician(p2);
