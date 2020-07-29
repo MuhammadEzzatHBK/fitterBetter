@@ -124,7 +124,7 @@ public class GainWeight extends FoodRecommendation {
         {
             if (ExerciseData.get(i).getExerciseType().equals("Gain Weigh"))
             {
-                ExerciseArray.add(ExerciseData.get(i).getExerciseName());
+                ExerciseArray.add(ExerciseData.get(i).getExerciseName()+","+ExerciseData.get(i).getCalories());
             }
         }
         return ExerciseArray;
