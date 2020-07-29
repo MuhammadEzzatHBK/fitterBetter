@@ -30,13 +30,16 @@ public class user extends person implements Serializable {
     private static final long serialVersionUID = 1L;
     private int weekNo = 0;    
     private FoodRecommendation foodPlan = null;
+    private String division;
+
     
-    public user(String firstN,String lastN,String username,String userpass,String mail,int age,double weight,double height,String gender){
+    public user(String firstN,String lastN,String username,String userpass,String mail,int age,double weight,double height,String gender,String division){
       super(firstN,lastN,userpass,mail,gender);
       this.age = age;
       this.weight = weight;
       this.height = height;
       this.username=username;
+      this.division = division;
       userno++;
       id = "U"+userno;
       track.add(String.valueOf(weight));
@@ -220,6 +223,13 @@ public class user extends person implements Serializable {
         return track;
     }
     public void activate(){active = true;}   
+    public String getDivision() {
+        return division;
+    }
+
+    public void setDivision(String division) {
+        this.division = division;
+    }
    
 }
 
