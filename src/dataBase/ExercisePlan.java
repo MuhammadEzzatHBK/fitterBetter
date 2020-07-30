@@ -13,6 +13,7 @@ public class ExercisePlan {
     private String ExerciseName;
     private double Calories;
     private String ExerciseType; 
+    private String ExerciseImage;
     
     public ExercisePlan(String[] metadata)
     {
@@ -20,7 +21,8 @@ public class ExercisePlan {
         ExerciseName = ExerciseName.substring(1);
         Calories  =  Double.valueOf(metadata[1]);
         ExerciseType = metadata[2];
-        ExerciseType = ExerciseType.substring(0, ExerciseType.length()-2);
+        ExerciseImage = metadata[3];
+        ExerciseImage = ExerciseImage.substring(0, ExerciseImage.length()-1);
     }
     
 
@@ -46,5 +48,13 @@ public class ExercisePlan {
 
     public void setExerciseType(String ExerciseType) {
         this.ExerciseType = ExerciseType;
+    }
+
+    public String getExerciseImage() {
+        return ExerciseImage;
+    }
+
+    public void setExerciseImage(String ExerciseImage) {
+        this.ExerciseImage = ExerciseImage;
     }
 }

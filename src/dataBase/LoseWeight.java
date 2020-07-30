@@ -140,9 +140,9 @@ public class LoseWeight extends FoodRecommendation {
     {
         for (int i = 0 ; i < ExerciseData.size() ; i++)
         {
-            if (ExerciseData.get(i).getExerciseType().equals("Lose Weigh"))
+            if (ExerciseData.get(i).getExerciseType().equals("Lose Weight"))
             {
-                ExerciseArray.add(ExerciseData.get(i).getExerciseName()+","+ExerciseData.get(i).getCalories());
+                ExerciseArray.add(ExerciseData.get(i).getExerciseName()+","+ExerciseData.get(i).getCalories()+","+ExerciseData.get(i).getExerciseImage());
             }
         }
         return ExerciseArray;
